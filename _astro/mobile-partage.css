@@ -1,0 +1,884 @@
+/* Comportements mobiles partages entre plusieurs pages — 22/09/2026
+ *
+ * Ces blocs vivaient dans `index.Ccpy-rW3.css`, la feuille de l'accueil. La
+ * revue de la page Technologie a montre qu'ils valaient pour elle aussi :
+ * les partenaires, les piliers, le parcours en cartes et le tableau
+ * comparatif sont les MEMES composants, avec les memes marqueurs
+ * `data-astro-cid-*` — ceux-ci identifient le composant, pas la page.
+ *
+ * Les garder en double aurait recree, a l'echelle des feuilles de style, le
+ * defaut que le dossier signale deja pour le HTML : une correction faite d'un
+ * cote et pas de l'autre, sans que ca se voie.
+ *
+ * Cette feuille se charge EN DERNIER sur chaque page : plusieurs de ses
+ * regles doivent l'emporter sur celles d'origine a specificite egale.
+ */
+
+/* ─── « Le constat » : le tableau redevient un tableau ──────────────────────
+   Le 20/09, faute de <thead>, il s'empilait en quatre paires
+   « Aujourd'hui » / « Avec Flow Industrie » — huit etiquettes repetees, et
+   l'opposition qui ne se lisait plus d'un coup d'oeil. On la retablit en
+   deux colonnes : c'est la forme qui porte le sens ici, pas le texte.
+   A 375 px, chaque colonne fait 150 px utiles ; a 12,5 px de corps cela tient
+   23 signes par ligne, soit trois lignes pour la cellule la plus longue.
+   V3, 05/10/2026 : la colonne « Aujourd'hui » est retiree a la demande de la
+   cliente. Il ne reste que « Avec Flow Industrie », sur toute la largeur. */
+@media(max-width:760px){
+ .bascule[data-astro-cid-j7pv25f6]{display:table;table-layout:fixed;width:100%;
+  font-size:.78rem}
+ .bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6]{display:table-row-group}
+ .bascule[data-astro-cid-j7pv25f6] thead[data-astro-cid-j7pv25f6]{display:table-header-group}
+ .bascule[data-astro-cid-j7pv25f6] tr[data-astro-cid-j7pv25f6]{display:table-row;margin-bottom:0}
+ .bascule[data-astro-cid-j7pv25f6] thead[data-astro-cid-j7pv25f6] th[data-astro-cid-j7pv25f6]{
+  display:table-cell;font-size:.68rem;letter-spacing:.04em;line-height:1.25;
+  padding:.6rem .55rem}
+ .bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] th[data-astro-cid-j7pv25f6],
+ .bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] tr[data-astro-cid-j7pv25f6]:last-child th[data-astro-cid-j7pv25f6]{
+  display:table-cell;width:50%;font-size:.78rem;line-height:1.35;
+  padding:.65rem .55rem;border-bottom:var(--rule)}
+ .bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] td[data-astro-cid-j7pv25f6].col-flow,
+ .bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] tr[data-astro-cid-j7pv25f6]:last-child td[data-astro-cid-j7pv25f6].col-flow{
+  display:table-cell;font-size:.78rem;line-height:1.35;
+  padding:.65rem .55rem;border-radius:0;border-bottom-color:#EDF2F624}
+ /* Les etiquettes posees le 20/09 faisaient double emploi avec l'en-tete
+    revenu : elles doublaient chaque cellule d'un rappel inutile. */
+ .bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] th[data-astro-cid-j7pv25f6]:before,
+ .bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] td[data-astro-cid-j7pv25f6].col-flow:before{
+  content:none}
+ /* La colonne bleue garde ses angles arrondis en haut et en bas de tableau. */
+ .bascule[data-astro-cid-j7pv25f6] thead[data-astro-cid-j7pv25f6] .col-flow[data-astro-cid-j7pv25f6]{
+  border-radius:var(--radius-sm) var(--radius-sm) 0 0}
+ .bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] tr[data-astro-cid-j7pv25f6]:last-child td[data-astro-cid-j7pv25f6].col-flow{
+  border-bottom:0;border-radius:0 0 var(--radius-sm) var(--radius-sm)}
+ .bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] tr[data-astro-cid-j7pv25f6]:last-child th[data-astro-cid-j7pv25f6]{
+  border-bottom:0}
+}
+
+
+/* Les images-cles du defilement.
+   Elles etaient restees dans `index.Ccpy-rW3.css`, la feuille de l'accueil :
+   sur la page Technologie l'animation portait donc un nom qui ne renvoyait a
+   rien, et la bande ne bougeait pas — on ne voyait qu'Eltia et la moitie de
+   TAES. Le deplacement des regles avait oublie ce qu'elles invoquent. */
+@keyframes defiler{0%{transform:translate(0)}to{transform:translate(-25%)}}
+
+/* ─── « Nos partenaires » : une bande qui defile sur telephone ──────────────
+   Les cinq logos etaient poses en grille repliee — trois rangees, 316 px, et
+   une lecture statique. La feuille portait deja toutes les regles de repli
+   pour une bande (`.defile`, `@keyframes defiler`, les copies masquees
+   neutralisees en mouvement reduit) : c'est le balisage qui avait perdu la
+   structure. Elle est retablie, et l'animation n'est allumee que sur
+   telephone — sur grand ecran, cinq logos centres se lisent tres bien.
+
+   Les copies portent aria-hidden : elles ferment la boucle, elles ne sont pas
+   cinq partenaires de plus. @keyframes defiler va jusqu'a -25 %, d'ou
+   exactement quatre exemplaires. */
+.partenaires[data-astro-cid-bcjkuurq] .logos[data-astro-cid-bcjkuurq][aria-hidden=true]{display:none}
+
+@media (max-width:760px) and (prefers-reduced-motion:no-preference){
+ .partenaires[data-astro-cid-bcjkuurq] .piste[data-astro-cid-bcjkuurq]{overflow:hidden;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 2rem,#000 calc(100% - 2rem),transparent);
+  mask-image:linear-gradient(to right,transparent,#000 2rem,#000 calc(100% - 2rem),transparent)}
+ .partenaires[data-astro-cid-bcjkuurq] .defile{display:flex;
+  width:max-content;animation:defiler 26s linear infinite;will-change:transform}
+ .partenaires[data-astro-cid-bcjkuurq] .piste[data-astro-cid-bcjkuurq]:hover
+  .defile{animation-play-state:paused}
+ .partenaires[data-astro-cid-bcjkuurq] .logos[data-astro-cid-bcjkuurq],
+ .partenaires[data-astro-cid-bcjkuurq] .logos[data-astro-cid-bcjkuurq][aria-hidden=true]{
+  display:flex;flex-wrap:nowrap;justify-content:flex-start;
+  gap:var(--space-lg);padding-inline-end:var(--space-lg)}
+ .partenaires[data-astro-cid-bcjkuurq] .logos[data-astro-cid-bcjkuurq] li[data-astro-cid-bcjkuurq]{
+  flex:none}
+}
+
+
+/* ─── « Notre solution » : les trois etapes en rouleau horizontal ───────────
+   Empilees, elles faisaient 1228 px — trois photos pleine largeur qu'il
+   fallait traverser au pouce pour atteindre la suite. En rouleau, la section
+   tient sur une carte et l'on passe de l'une a l'autre par glissement ou par
+   les fleches.
+
+   Le glissement natif fait le travail (scroll-snap) : les fleches ne sont
+   qu'un second chemin, pour qui ne pense pas a faire glisser. Elles
+   n'apparaissent que si le script a pu s'initialiser — sans lui, le rouleau
+   reste glissable et les fleches ne promettent rien qu'elles ne tiennent. */
+.trajet-commandes{display:none}
+
+@media(max-width:900px){
+ .trajet-rouleau{position:relative}
+ .trajet[data-astro-cid-j7pv25f6]{display:flex;grid-template-columns:none;
+  overflow-x:auto;overscroll-behavior-x:contain;
+  scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad-wrap);
+  gap:var(--space-md);margin-top:var(--space-lg);
+  padding-bottom:.35rem;
+  scrollbar-width:none;-ms-overflow-style:none}
+ .trajet[data-astro-cid-j7pv25f6]::-webkit-scrollbar{display:none}
+ .trajet[data-astro-cid-j7pv25f6] li[data-astro-cid-j7pv25f6]{
+  flex:0 0 82%;scroll-snap-align:center;padding:var(--space-md)}
+ .trajet-titre[data-astro-cid-j7pv25f6]{font-size:1rem}
+ .trajet-texte[data-astro-cid-j7pv25f6]{font-size:.88rem;line-height:1.5}
+
+ .trajet-rouleau[data-actif] .trajet-commandes{display:flex;align-items:center;
+  justify-content:center;gap:var(--space-md);margin-top:var(--space-md)}
+ .trajet-fleche{display:grid;place-items:center;width:2.75rem;height:2.75rem;
+  border:var(--rule);border-radius:62.4375rem;background:var(--color-paper);
+  color:var(--color-petrol);cursor:pointer;
+  transition:border-color var(--dur) var(--ease-out),color var(--dur) var(--ease-out)}
+ .trajet-fleche:disabled{opacity:.35;cursor:default}
+ .trajet-fleche:not(:disabled):hover{border-color:var(--color-teal);
+  color:var(--color-petrol-deep)}
+ .rouleau-rang{font-family:var(--font-display);font-size:.82rem;font-weight:600;
+  color:var(--color-ink-2);font-variant-numeric:tabular-nums;min-width:3.5ch;
+  text-align:center}
+}
+@media (prefers-reduced-motion:reduce){
+ .trajet-fleche{transition:none}
+}
+
+
+/* ─── « Nos valeurs ajoutees » : le deroulement ne part plus trop tot ───────
+   Le script calculait sa progression a partir du haut de la SECTION, et
+   demarrait des qu'il croisait 55 % de la hauteur d'ecran — c'est-a-dire
+   quand la section pointait a peine sous le pli. Le temps d'arriver dessus,
+   deux piliers etaient deja passes : on ne voyait jamais le premier.
+
+   La branche de repli du script (index.html, [data-roulette]) se cale
+   desormais sur la PILE DE CARTES : rien ne bouge tant que son haut n'est pas
+   remonte a 45 % de l'ecran — a ce moment la premiere carte est entierement
+   visible — et le deroulement s'acheve quand son bas atteint 30 %.
+
+   Cette branche ne sert que lorsque la piste est trop courte pour piloter le
+   defilement, c'est-a-dire sur telephone et tablette. Sur grand ecran la
+   piste fait 220 vh et c'est elle qui commande, inchangee.
+
+   Ici on retire seulement la gouttiere de 205 px entre la navigation et les
+   cartes : elle eloignait la premiere carte du pli sans rien apporter. */
+@media(max-width:900px){
+ .split-piliers[data-astro-cid-j7pv25f6] .ecran[data-astro-cid-j7pv25f6]{gap:var(--space-lg)}
+}
+
+
+/* ─── Les fleches des deux rouleaux, au centre des blocs ───────────────────
+   Elles etaient sous la bande : le pouce quittait l'image pour aller les
+   chercher. Elles passent sur les cotes, a mi-hauteur de la carte.
+
+   `display:contents` sur la barre de commandes fait remonter ses trois
+   enfants dans l'enveloppe : celle-ci ne contient plus que la bande dans le
+   flux, donc 50 % de sa hauteur EST le milieu de la carte. Le talon reserve
+   au compteur est retranche pour que le calcul reste juste. */
+.trajet-rouleau,.secteurs-rouleau{position:relative}
+.rouleau-fleche,.trajet-fleche{display:grid;place-items:center;
+ width:2.5rem;height:2.5rem;border:var(--rule);border-radius:62.4375rem;
+ background:color-mix(in oklab,var(--color-paper) 88%,transparent);
+ -webkit-backdrop-filter:blur(.375rem);backdrop-filter:blur(.375rem);
+ color:var(--color-petrol);cursor:pointer;
+ box-shadow:0 1px .375rem oklch(29% .06 248 / .14);
+ transition:border-color var(--dur) var(--ease-out),color var(--dur) var(--ease-out)}
+.rouleau-fleche:disabled,.trajet-fleche:disabled{opacity:.3;cursor:default}
+.rouleau-fleche:not(:disabled):hover,.trajet-fleche:not(:disabled):hover{
+ border-color:var(--color-teal);color:var(--color-petrol-deep)}
+.rouleau-rang{font-family:var(--font-display);font-size:.78rem;
+ font-weight:600;color:var(--color-ink-2);font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){
+ .rouleau-fleche,.trajet-fleche{transition:none}
+}
+
+@media(max-width:900px){
+ .trajet-rouleau[data-actif]{padding-bottom:2.2rem}
+ .trajet-rouleau[data-actif] .trajet-commandes{display:contents}
+ .trajet-rouleau[data-actif] .trajet-fleche{position:absolute;z-index:3;
+  top:calc(50% - 1.1rem);transform:translateY(-50%)}
+ .trajet-rouleau[data-actif] [data-trajet-prec]{left:.2rem}
+ .trajet-rouleau[data-actif] [data-trajet-suiv]{right:.2rem}
+ .trajet-rouleau[data-actif] .rouleau-rang{position:absolute;bottom:0;
+  left:50%;transform:translateX(-50%)}
+ /* La carte laisse la place aux fleches pour ne pas les poser sur le texte. */
+ .trajet[data-astro-cid-j7pv25f6] li[data-astro-cid-j7pv25f6]{flex-basis:80%}
+
+ /* Les trois vignettes au meme format : elles se calaient chacune sur le
+    rapport de sa propre photo, et « Produire » tombait 21 px plus bas que
+    les deux autres. */
+ .trajet[data-astro-cid-j7pv25f6] .trajet-image{aspect-ratio:16 / 10}
+ .trajet[data-astro-cid-j7pv25f6] .trajet-image>img{width:100%;height:100%;
+  object-fit:cover}
+}
+
+.secteurs-commandes{display:none}
+@media(max-width:760px){
+ .secteurs-rouleau[data-actif]{padding-bottom:2.2rem}
+ .secteurs-rouleau[data-actif] .secteurs-commandes{display:contents}
+ .secteurs-rouleau[data-actif] .rouleau-fleche{position:absolute;z-index:3;
+  top:calc(50% - 1.1rem);transform:translateY(-50%)}
+ .secteurs-rouleau[data-actif] [data-secteurs-prec]{left:-.35rem}
+ .secteurs-rouleau[data-actif] [data-secteurs-suiv]{right:-.35rem}
+ .secteurs-rouleau[data-actif] .rouleau-rang{position:absolute;bottom:0;
+  left:50%;transform:translateX(-50%)}
+}
+
+
+/* ─── « Le constat » : la ligne sous le regard s'allume ────────────────────
+   Sur grand ecran, survoler une ligne l'eclaire. Un telephone n'a pas de
+   survol : `accueil-mobile.js` marque la ligne la plus proche du centre de
+   l'ecran, ce qui donne le meme guidage en lisant au pouce. Les couleurs
+   sont celles du survol de bureau, a l'identique.
+
+   Et le tableau gagne le cadre qui lui manquait : arrondi, filet, et un peu
+   d'air autour — sans lui il flottait entre deux traits de section. */
+@media(max-width:760px){
+ .bascule-cadre[data-astro-cid-j7pv25f6]{border:var(--rule);
+  border-radius:var(--radius-md);padding:.35rem .5rem .5rem;
+  background:var(--color-paper);
+  box-shadow:0 1px .1875rem oklch(29% .06 248 / .07);overflow:hidden}
+ .bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6]
+  tr[data-astro-cid-j7pv25f6] th[data-astro-cid-j7pv25f6],
+ .bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6]
+  tr[data-astro-cid-j7pv25f6] td[data-astro-cid-j7pv25f6]{
+  transition:background-color var(--dur) var(--ease-out)}
+ .bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6]
+  tr[data-actif] th[data-astro-cid-j7pv25f6]{
+  background-color:var(--color-paper-2)}
+ .bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6]
+  tr[data-actif] td[data-astro-cid-j7pv25f6].col-flow{
+  background-color:color-mix(in oklab,#fff 9%,var(--color-petrol-deep))}
+}
+@media (prefers-reduced-motion:reduce){
+ .bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6]
+  tr[data-astro-cid-j7pv25f6] th[data-astro-cid-j7pv25f6],
+ .bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6]
+  tr[data-astro-cid-j7pv25f6] td[data-astro-cid-j7pv25f6]{transition:none}
+}
+
+
+/* ─── « Nos valeurs ajoutees » : le bloc s'epingle, centre ─────────────────
+   Le 21/09 au matin, on avait seulement recale le declenchement. Ca ne
+   suffisait pas : le bloc n'etant pas epingle, il continuait de monter
+   pendant qu'il deroulait, et le dernier pilier passait alors que la pile
+   sortait deja par le haut. Tom : « il faut vraiment que ce soit centre, et
+   que quand c'est centre ça defile, mais sans remonter et sans redescendre ».
+
+   C'est le comportement de bureau, qui avait ete desactive sous 900 px parce
+   que le bloc empile ne tenait pas dans l'ecran : 1110 px pour 743
+   disponibles. On le fait tenir — la reserve de la pile passe de 5,5 a
+   2,25 rem, la carte et la colonne de tete se resserrent — puis on le rend
+   collant et on donne a la piste la course necessaire.
+
+   `--h-ecran` est mesuree par le script, pas devinee : une valeur en dur
+   serait fausse des que le texte change de longueur.
+
+   Les regles des piliers vivent dans un <style> INLINE de index.html, charge
+   apres cette feuille. D'ou le prefixe `.split-piliers` : il faut une
+   specificite superieure, l'ordre ne suffit pas. */
+/* L'epinglage ne vaut que si le bloc TIENT dans la place REELLEMENT libre.
+
+   Erreur du 21/09, corrigee ici : la place n'est pas « fenetre moins en-tete ».
+   La barre d'action « Contactez-nous » est fixee en bas et mange 70 px de plus.
+   Le bloc etait donc « entierement visible » au sens des rectangles, mais son
+   bas — la pile de cartes, le seul contenu qui compte — passait DESSOUS.
+   Mesure a 375x812 : 812 - 69 - 70 = 673 px libres, pour un bloc de 734.
+
+   La decision ne se prend plus par requete de media, qui ne peut pas connaitre
+   la hauteur du bloc : `accueil-mobile.js` mesure les deux et pose
+   `data-epingle` quand ca tient. Sinon le bloc reste dans le flux et c'est le
+   declenchement recale qui joue — moins bien, mais rien de cache. */
+@media(max-width:900px){
+ /* La taille du bloc est la MEME, epingle ou non. Si la gouttiere ne valait
+    que dans l'etat epingle, la hauteur mesuree dependrait de l'epinglage, qui
+    depend de la hauteur mesuree : le bloc ne pourrait jamais s'epingler. */
+ .split-piliers[data-astro-cid-j7pv25f6] .ecran[data-astro-cid-j7pv25f6]{
+  min-height:0;grid-template-columns:minmax(0,1fr);
+  gap:.55rem;padding-block:.2rem}
+ .split-piliers[data-astro-cid-j7pv25f6][data-epingle] .piste[data-astro-cid-j7pv25f6]{
+  height:calc(100svh + 115svh)}
+ .split-piliers[data-astro-cid-j7pv25f6][data-epingle] .ecran[data-astro-cid-j7pv25f6]{
+  position:sticky;
+  top:calc(var(--h-entete) + (var(--h-libre,0px) - var(--h-ecran,43.75rem)) / 2)}
+
+ /* Les 61 px a retrancher se prennent d'abord sur la navigation des quatre
+    piliers — une legende, pas du contenu — puis sur les reserves. Les cibles
+    tactiles restent a 39 px, bien au-dessus du minimum de 24. */
+ .split-piliers .commande[data-astro-cid-ecwx7uhs]{min-height:2.45rem;
+  padding-bottom:.5rem}
+ .split-piliers .roulette[data-astro-cid-ecwx7uhs][data-pilotage]{
+  padding-block:1rem;
+  -webkit-mask-image:linear-gradient(transparent 0,#000 12%,#000 88%,transparent 100%);
+  mask-image:linear-gradient(transparent 0,#000 12%,#000 88%,transparent 100%)}
+ .split-piliers .pilier[data-astro-cid-ecwx7uhs]{padding:var(--space-sm) var(--space-md)}
+ .split-piliers[data-astro-cid-j7pv25f6] .titre-section[data-astro-cid-j7pv25f6]{
+  font-size:1.3rem;line-height:1.1}
+ .split-piliers[data-astro-cid-j7pv25f6] .chapo[data-astro-cid-j7pv25f6]{
+  font-size:.86rem;line-height:1.4}
+ .split-piliers[data-astro-cid-j7pv25f6] .surtitre-section[data-astro-cid-j7pv25f6]{
+  margin-bottom:var(--space-xs)}
+}
+
+
+/* ═══ Page Technologie — 22/09/2026 ═════════════════════════════════════════
+   Les composants partages (partenaires, piliers, parcours en cartes) sont
+   traites par les blocs ci-dessus : ils portent les memes marqueurs qu'a
+   l'accueil. Ne restent ici que les sections propres a cette page. */
+
+
+/* ─── La banniere de tete, deux fois moins haute ───────────────────────────
+   Elle occupait 471 px sur 812, soit 58 % du premier ecran pour une image de
+   decor. La source est un paysage 1697x927 : la raccourcir ne coupe presque
+   rien, `object-fit: cover` elargit meme la tranche visible. Aucune image a
+   refabriquer.
+
+   Attention : `.banniere` est un composant partage. Cette regle vaut donc
+   aussi pour les autres pages qui l'emploient. */
+@media(max-width:860px){
+ /* La hauteur d'origine est `clamp(22rem, 58vh, 38rem)`, portee par un
+    selecteur a marqueur de composant. On egale sa specificite en repetant la
+    classe plutot qu'en citant le marqueur : la regle vaut ainsi pour toutes
+    les pages qui emploient cette banniere, et non pour une seule. */
+ .banniere.banniere{height:15rem;min-height:0}
+ .banniere.banniere .banniere-image{height:100%}
+ .banniere.banniere .wrap{padding-block:var(--space-md)}
+}
+
+
+/* ─── Les trois reperes : les chiffres seuls ───────────────────────────────
+   Mis sur une ligne, chacun trainait encore sous lui deux a trois lignes de
+   texte a 11 px — trois pavés cote a cote, illisibles et hauts. Le sous-texte
+   est masque sur telephone : un repere sert a etre saisi d'un coup d'oeil, et
+   c'est le chiffre qui le porte.
+
+   Il est masque, pas supprime : le balisage reste entier, et le texte
+   s'affiche toujours sur grand ecran. */
+@media(max-width:860px){
+ .reperes[data-astro-cid-kdenjtmw] .wrap[data-astro-cid-kdenjtmw]{
+  grid-template-columns:repeat(3,minmax(0,1fr)) !important;
+  gap:.7rem !important;padding-block:var(--space-lg) !important}
+ .repere[data-astro-cid-kdenjtmw]{padding-inline:0 !important;
+  border-left:0 !important;border-top:0 !important;padding-top:0 !important}
+ .repere[data-astro-cid-kdenjtmw]:not(:first-child){border-top:0 !important;
+  padding-top:0 !important}
+ .repere[data-astro-cid-kdenjtmw]:before{width:1.25rem;margin-bottom:.5rem}
+ .repere[data-astro-cid-kdenjtmw] b[data-astro-cid-kdenjtmw]{
+  font-size:.95rem;line-height:1.2}
+ .repere[data-astro-cid-kdenjtmw] span[data-astro-cid-kdenjtmw]{display:none}
+}
+
+
+/* ─── « Comment fonctionne le flux continu » : des tuiles carrees ──────────
+   Deux defauts se cumulaient. La tuile est une grille `32px auto` : l'icone
+   occupe la premiere colonne et le TITRE la seconde — 71 px de large sur
+   telephone, d'ou « Une productio / n a la demande » coupe en plein mot. Et
+   les tuiles a liste sont en `flex` sans `min-width:0` : leur contenu refusait
+   de se replier et sortait du cadre, ce que Tom a vu comme « le texte ecrit a
+   cote du bloc ».
+
+   Sur telephone la tuile passe donc en UNE colonne — icone au-dessus, titre
+   dessous, pleine largeur pour les deux — et tout ce qui peut se replier y est
+   autorise. Le corps descend a 0,72 rem : les blocs deviennent carres au lieu
+   de colonnes etroites. */
+@media(max-width:860px){
+ .bento[data-astro-cid-tbycxezx]{grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  gap:.55rem !important}
+ .bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx]{
+  grid-column:auto !important;grid-row:auto !important;
+  grid-template-columns:minmax(0,1fr) !important;
+  display:grid;align-content:start;gap:.45rem;
+  padding:var(--space-md);min-width:0;overflow:hidden}
+ /* Les tuiles a liste sont en flex : sans cette ligne, leur colonne de texte
+    ne se replie pas et deborde. */
+ .bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx]>*{min-width:0;max-width:100%}
+ .bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] .icone-bloc{
+  width:1.9rem;height:1.9rem}
+ .bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] h3,
+ .bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] h4,
+ .bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] .libelle{
+  font-size:.82rem;line-height:1.2;overflow-wrap:break-word}
+ .bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] p,
+ .bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] li{
+  font-size:.72rem;line-height:1.3;overflow-wrap:break-word}
+ .bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] ul{gap:.2rem}
+ /* Le schema et la derniere tuile prennent la largeur : le premier est un
+    dessin, la seconde resterait seule sur sa rangee. */
+ .bento[data-astro-cid-tbycxezx] .tuile-schema[data-astro-cid-tbycxezx],
+ .bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx]:last-child{
+  grid-column:1 / -1 !important}
+ .bento[data-astro-cid-tbycxezx] .tuile-schema[data-astro-cid-tbycxezx] figure,
+ .bento[data-astro-cid-tbycxezx] .tuile-schema[data-astro-cid-tbycxezx] figure>*,
+ .bento[data-astro-cid-tbycxezx] .tuile-schema[data-astro-cid-tbycxezx] svg{
+  max-width:100%;min-width:0;width:100%;height:auto}
+}
+
+
+/* ─── Le comparatif campagnes / flux continu ───────────────────────────────
+   TROISIEME reprise. Les deux precedentes sont notees pour qu'on ne les
+   refasse pas : la premiere laissait a chaque cellule sa bordure et ses angles
+   arrondis (douze petites boites, pas un tableau) ; la seconde empilait des
+   bandes — critere sur toute la largeur, puis les deux valeurs — ce qui
+   COUPAIT la colonne bleue a chaque ligne. C'est elle qui fait lire une
+   comparaison ; la briser, c'est perdre le tableau.
+
+   Ici, la forme du tableau de l'accueil, a la lettre : un vrai `display:table`
+   a colonnes fixes, et la colonne Flow d'un seul tenant du haut en bas, angles
+   arrondis aux deux extremites.
+
+   La difference tient au contenu : ce tableau-ci a TROIS colonnes — un critere
+   et deux valeurs — quand celui de l'accueil n'en a que deux. Le critere prend
+   une colonne etroite a gauche, en petites capitales.
+
+   L'en-tete, lui, n'a que deux cellules pour trois colonnes : le coin en haut
+   a gauche n'existe pas dans le balisage. Un `::before` en `display:table-cell`
+   le fabrique, sans quoi les deux intitules se calent sur les colonnes 1 et 2
+   et tout le tableau est decale d'un cran. */
+@media(max-width:760px){
+ .comparatif-cadre{border:var(--rule);border-radius:var(--radius-md);
+  background:var(--color-paper);overflow:hidden;padding:0;
+  box-shadow:0 1px .1875rem oklch(29% .06 248 / .07)}
+
+ .comparatif[data-astro-cid-fvbzfwj6]{display:table;table-layout:fixed;width:100%;
+  border-collapse:separate;border-spacing:0;font-size:.74rem}
+ .comparatif[data-astro-cid-fvbzfwj6] caption[data-astro-cid-fvbzfwj6]{display:table-caption;caption-side:top;
+  text-align:left;font-family:var(--font-display);font-size:.68rem;
+  font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--color-muted);padding:.7rem .6rem .55rem}
+ .comparatif[data-astro-cid-fvbzfwj6] thead[data-astro-cid-fvbzfwj6]{display:table-header-group}
+ .comparatif[data-astro-cid-fvbzfwj6] tbody[data-astro-cid-fvbzfwj6]{display:table-row-group}
+ .comparatif[data-astro-cid-fvbzfwj6] thead[data-astro-cid-fvbzfwj6] tr[data-astro-cid-fvbzfwj6],
+ .comparatif[data-astro-cid-fvbzfwj6] tbody[data-astro-cid-fvbzfwj6] tr[data-astro-cid-fvbzfwj6]{display:table-row;margin:0;gap:0;background:none}
+
+ /* Le coin manquant de l'en-tete. */
+ .comparatif[data-astro-cid-fvbzfwj6] thead[data-astro-cid-fvbzfwj6] tr[data-astro-cid-fvbzfwj6]:before{content:"";display:table-cell;width:29%}
+
+ .comparatif[data-astro-cid-fvbzfwj6] thead[data-astro-cid-fvbzfwj6] tr[data-astro-cid-fvbzfwj6] th[data-astro-cid-fvbzfwj6]{display:table-cell;width:35.5%;
+  vertical-align:bottom;font-size:.7rem;line-height:1.2;padding:.6rem .5rem;
+  border:0;border-radius:0;background:none;color:var(--color-petrol-deep)}
+
+ .comparatif[data-astro-cid-fvbzfwj6] tbody[data-astro-cid-fvbzfwj6] tr[data-astro-cid-fvbzfwj6] th[data-astro-cid-fvbzfwj6]{display:table-cell;width:29%;
+  vertical-align:top;font-size:.6rem;line-height:1.2;padding:.6rem .55rem .6rem .5rem;
+  letter-spacing:.05em;text-transform:uppercase;font-weight:600;
+  color:var(--color-muted);
+  border:0;border-bottom:var(--rule);border-radius:0;background:none}
+
+ .comparatif[data-astro-cid-fvbzfwj6] tbody[data-astro-cid-fvbzfwj6] tr[data-astro-cid-fvbzfwj6] td[data-astro-cid-fvbzfwj6]{display:table-cell;width:35.5%;
+  vertical-align:top;font-size:.74rem;line-height:1.3;padding:.6rem .5rem;
+  border:0;border-bottom:var(--rule);border-radius:0;background:none;margin:0}
+
+ /* La colonne Flow, d'un seul tenant. */
+ .comparatif[data-astro-cid-fvbzfwj6] thead[data-astro-cid-fvbzfwj6] tr[data-astro-cid-fvbzfwj6] th[data-astro-cid-fvbzfwj6].col-flux,
+ .comparatif[data-astro-cid-fvbzfwj6] tbody[data-astro-cid-fvbzfwj6] tr[data-astro-cid-fvbzfwj6] td[data-astro-cid-fvbzfwj6].col-flux{
+  background:var(--color-petrol-deep);border-bottom-color:#EDF2F624}
+ .comparatif[data-astro-cid-fvbzfwj6] thead[data-astro-cid-fvbzfwj6] tr[data-astro-cid-fvbzfwj6] th[data-astro-cid-fvbzfwj6].col-flux{color:var(--color-teal-clair);
+  border-radius:var(--radius-sm) var(--radius-sm) 0 0}
+ .comparatif[data-astro-cid-fvbzfwj6] tbody[data-astro-cid-fvbzfwj6] tr[data-astro-cid-fvbzfwj6] td[data-astro-cid-fvbzfwj6].col-flux{color:var(--color-on-dark)}
+ .comparatif[data-astro-cid-fvbzfwj6] tbody[data-astro-cid-fvbzfwj6] tr[data-astro-cid-fvbzfwj6]:last-child td[data-astro-cid-fvbzfwj6].col-flux{border-bottom:0;
+  border-radius:0 0 var(--radius-sm) var(--radius-sm)}
+ .comparatif[data-astro-cid-fvbzfwj6] tbody[data-astro-cid-fvbzfwj6] tr[data-astro-cid-fvbzfwj6]:last-child th[data-astro-cid-fvbzfwj6],
+ .comparatif[data-astro-cid-fvbzfwj6] tbody[data-astro-cid-fvbzfwj6] tr[data-astro-cid-fvbzfwj6]:last-child td[data-astro-cid-fvbzfwj6]{border-bottom:0}
+
+ /* La ligne sous le regard s'allume, comme a l'accueil. */
+ .comparatif[data-astro-cid-fvbzfwj6] tbody[data-astro-cid-fvbzfwj6] tr[data-astro-cid-fvbzfwj6] th[data-astro-cid-fvbzfwj6],
+ .comparatif[data-astro-cid-fvbzfwj6] tbody[data-astro-cid-fvbzfwj6] tr[data-astro-cid-fvbzfwj6] td[data-astro-cid-fvbzfwj6]{
+  transition:background-color var(--dur) var(--ease-out)}
+ .comparatif[data-astro-cid-fvbzfwj6] tbody[data-astro-cid-fvbzfwj6] tr[data-actif] th[data-astro-cid-fvbzfwj6],
+ .comparatif[data-astro-cid-fvbzfwj6] tbody[data-astro-cid-fvbzfwj6] tr[data-actif] td[data-astro-cid-fvbzfwj6]{
+  background-color:var(--color-paper-2)}
+ .comparatif[data-astro-cid-fvbzfwj6] tbody[data-astro-cid-fvbzfwj6] tr[data-actif] td[data-astro-cid-fvbzfwj6].col-flux{
+  background-color:color-mix(in oklab,#fff 9%,var(--color-petrol-deep))}
+}
+
+
+/* ─── « Nos valeurs ajoutees » : le meme bloc epingle, ici aussi ───────────
+   La section est la meme qu'a l'accueil, mais son marqueur de composant
+   differe (`fvbzfwj6` au lieu de `j7pv25f6`) : les regles d'epinglage
+   ci-dessus ne l'attrapaient pas. On les redit pour ce marqueur — la carte,
+   la pile et la navigation, elles, sont deja traitees, leurs marqueurs etant
+   communs aux deux pages. */
+@media(max-width:900px){
+ .split-piliers[data-astro-cid-fvbzfwj6] .ecran[data-astro-cid-fvbzfwj6]{
+  min-height:0;grid-template-columns:minmax(0,1fr);
+  gap:.55rem;padding-block:.2rem}
+ .split-piliers[data-astro-cid-fvbzfwj6][data-epingle] .piste[data-astro-cid-fvbzfwj6]{
+  height:calc(100svh + 115svh)}
+ .split-piliers[data-astro-cid-fvbzfwj6][data-epingle] .ecran[data-astro-cid-fvbzfwj6]{
+  position:sticky;
+  top:calc(var(--h-entete) + (var(--h-libre,0px) - var(--h-ecran,43.75rem)) / 2)}
+ .split-piliers[data-astro-cid-fvbzfwj6] .titre-section[data-astro-cid-fvbzfwj6]{
+  font-size:1.3rem;line-height:1.1}
+ .split-piliers[data-astro-cid-fvbzfwj6] .chapo[data-astro-cid-fvbzfwj6]{
+  font-size:.86rem;line-height:1.4}
+}
+
+
+/* ─── Les cartes de piliers : assez courtes pour tenir dans la pile ────────
+   Sur la page Technologie, ces cartes portent en plus une liste a puces :
+   elles sont bien plus hautes qu'a l'accueil. La pile n'etant dimensionnee
+   que par la plus haute, les voisines translatees debordaient largement du
+   masque et l'on voyait trois textes superposes — « il defile n'importe ou,
+   on n'arrive pas a lire ».
+
+   On resserre donc le contenu des cartes, partout : c'est le meme composant
+   (`ecwx7uhs`) sur les deux pages, et l'accueil y gagne aussi. Et le masque
+   reprend de la marge pour effacer franchement les voisines. */
+@media(max-width:900px){
+ .split-piliers .pilier[data-astro-cid-ecwx7uhs] h3,
+ .split-piliers .pilier[data-astro-cid-ecwx7uhs] .pilier-titre{
+  font-size:.98rem;line-height:1.2}
+ .split-piliers .pilier[data-astro-cid-ecwx7uhs] p{
+  font-size:.82rem;line-height:1.35}
+ .split-piliers .pilier[data-astro-cid-ecwx7uhs] li{
+  font-size:.76rem;line-height:1.3}
+ .split-piliers .pilier[data-astro-cid-ecwx7uhs] ul{gap:.15rem}
+ .split-piliers .roulette[data-astro-cid-ecwx7uhs][data-pilotage]{
+  -webkit-mask-image:linear-gradient(transparent 0,#000 20%,#000 80%,transparent 100%);
+  mask-image:linear-gradient(transparent 0,#000 20%,#000 80%,transparent 100%)}
+}
+
+
+/* ─── Bento : ce qui refusait encore de se replier ─────────────────────────
+   Restaient cinq debordements, tous du meme genre : un lien de conclusion
+   (« Voir les valeurs ajoutees ↓ ») et des puces qui ne se coupaient pas. */
+@media(max-width:860px){
+ .bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] .conclusion,
+ .bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] a,
+ .bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] li,
+ .bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] ul{
+  white-space:normal;overflow-wrap:anywhere;min-width:0}
+ .bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] .conclusion{
+  font-size:.72rem;line-height:1.25}
+}
+
+
+/* ═══ Echelle typographique sur telephone — 23/09/2026 ══════════════════════
+   Demande de Tom : « il faut globalement que tu ecrives plus petit, notamment
+   sur les titres et sous-titres et les gros textes, pour laisser plus de
+   place ».
+
+   Le site porte une echelle de jetons propre. On la redescend ICI plutot que
+   de reprendre regle par regle : un seul endroit a lire, un seul a corriger,
+   et rien qui puisse diverger d'une page a l'autre.
+
+   Les valeurs d'origine sont des `clamp()` dont c'est la BORNE BASSE qui
+   s'applique sur telephone (5,4vw ne fait que 20 px a 375 px de large) : les
+   remplacer par une valeur simple ne change donc rien au comportement, juste
+   l'echelle.
+
+   | jeton              | avant  | apres  |
+   | ------------------ | ------ | ------ |
+   | --text-display     | 38,4px | 29,6px |
+   | --text-display-s   | 33,6px | 26,4px |
+   | --text-h2          | 27,2px | 21,6px |
+   | --text-h3          | 18px   | 16px   |
+   | --text-lg          | 21px   | 16,8px |
+   | --text-body        | 17px   | 15,2px |
+   | --text-sm          | 14px   | 12,8px |
+
+   Le plancher de lisibilite reste tenu : le plus petit jeton est a 12,8 px,
+   au-dessus des 12 px sous lesquels on ne descend pas. Et les champs de
+   formulaire gardent leur regle a 16 px — sous ce seuil, Safari iOS zoome
+   des qu'on entre dans un champ et decadre la page. */
+@media(max-width:860px){
+ :root{
+  --text-display:1.85rem;
+  --text-display-s:1.65rem;
+  --text-h2:1.35rem;
+  --text-h3:1rem;
+  --text-lg:1.05rem;
+  --text-body:.95rem;
+  --text-sm:.8rem;
+ }
+}
+
+
+/* ─── Le « En savoir plus » des tuiles du fonctionnement ───────────────────
+   Pose par `mobile.js` sur telephone seulement. Le marqueur d'origine du
+   <summary> est retire au profit d'un chevron qui pivote a l'ouverture. */
+@media(max-width:860px){
+ .tuile-details{margin-top:.15rem}
+ .tuile-details>summary{
+  list-style:none;cursor:pointer;display:inline-flex;align-items:center;
+  gap:.3rem;min-height:2.2rem;
+  font-family:var(--font-display);font-size:.72rem;font-weight:600;
+  color:var(--color-petrol);text-decoration:underline;
+  text-decoration-color:var(--color-teal);text-underline-offset:.1875rem}
+ .tuile-details>summary::-webkit-details-marker{display:none}
+ /* Le chevron depasse de 2 px de la boite du <summary> : on les reserve. */
+ .tuile-details>summary{max-width:100%;padding-right:2px}
+ .tuile-details>summary::after{content:"";width:.42rem;height:.42rem;flex:none;
+  border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:rotate(45deg) translate(-1px,-1px);
+  transition:transform var(--dur) var(--ease-out)}
+ .tuile-details[open]>summary::after{
+  transform:rotate(225deg) translate(-1px,-1px)}
+ .tuile-details[open]>summary{margin-bottom:.3rem}
+}
+@media (prefers-reduced-motion:reduce){
+ .tuile-details>summary::after{transition:none}
+}
+
+
+/* ─── « Nos valeurs ajoutees » sur « L'unite sur votre site » ──────────────
+   Meme section qu'ailleurs, marqueur de composant different (`t6vnkbpi`).
+   Les cartes, la pile et la navigation sont deja traitees — leurs marqueurs
+   sont communs a toutes les pages. Ne restent que l'epinglage et les deux
+   tailles de tete. */
+@media(max-width:900px){
+ .split-piliers[data-astro-cid-t6vnkbpi] .ecran[data-astro-cid-t6vnkbpi]{
+  min-height:0;grid-template-columns:minmax(0,1fr);
+  gap:.55rem;padding-block:.2rem}
+ .split-piliers[data-astro-cid-t6vnkbpi][data-epingle] .piste[data-astro-cid-t6vnkbpi]{
+  height:calc(100svh + 115svh)}
+ .split-piliers[data-astro-cid-t6vnkbpi][data-epingle] .ecran[data-astro-cid-t6vnkbpi]{
+  position:sticky;
+  top:calc(var(--h-entete) + (var(--h-libre,0px) - var(--h-ecran,43.75rem)) / 2)}
+ .split-piliers[data-astro-cid-t6vnkbpi] .titre-section[data-astro-cid-t6vnkbpi]{
+  font-size:1.3rem;line-height:1.1}
+ .split-piliers[data-astro-cid-t6vnkbpi] .chapo[data-astro-cid-t6vnkbpi]{
+  font-size:.86rem;line-height:1.4}
+}
+
+
+/* Deplace depuis `index.Ccpy-rW3.css` le 23/09 : la grille des secteurs
+   existe aussi sur « Notre Solution », avec le meme composant. Elle etait
+   restee dans la feuille de l'accueil, ou elle ne servait qu'a une page.
+   L'accueil ne change pas : la regle est la meme, chargee autrement. */
+/* ─── « Nos secteurs d'activite » : quatre tuiles par page, en rouleau ─────
+   Remplace le passage a trois par ligne du 21/09 (premiere version) : Tom a
+   demande une bande a fleches plutot qu'une grille plus dense.
+
+   `grid-auto-flow:column` sur deux rangees remplit colonne par colonne — la
+   premiere colonne porte les tuiles 1 et 2, la deuxieme 3 et 4, etc. Chaque
+   colonne fait la moitie de la largeur : deux colonnes a l'ecran, donc quatre
+   tuiles, deux images sur deux lignes. Une page vaut deux colonnes, et le
+   script avance de quatre tuiles a la fois.
+
+   La bande se referme sur elle-meme : huit secteurs equivalents, aucun n'est
+   un debut ni une fin, et les fleches ne s'eteignent jamais. */
+@media(max-width:760px){
+ [data-grille-secteurs]{display:grid !important;
+  grid-auto-flow:column;grid-template-columns:none !important;
+  grid-template-rows:repeat(2,auto);grid-auto-columns:calc((100% - .5rem) / 2);
+  gap:.5rem !important;
+  overflow-x:auto;overscroll-behavior-x:contain;
+  scroll-snap-type:x mandatory;
+  scrollbar-width:none;-ms-overflow-style:none}
+ [data-grille-secteurs]::-webkit-scrollbar{display:none}
+ [data-tuile]{scroll-snap-align:start}
+ [data-tuile] .socle{font-size:.72rem;line-height:1.15;padding:.4rem .45rem}
+}
+
+
+/* ─── Le titre des bannieres suit l'echelle ────────────────────────────────
+   Plusieurs pages ecrivent la taille de leur titre de banniere en dur
+   (`clamp(1.7rem, 3.2vw, 2.7rem)`) au lieu de passer par un jeton : elles
+   echappaient donc a la baisse et affichaient 27,2 px quand les autres
+   etaient a 26,4. On les ramene sur le jeton.
+
+   La regle vise `.banniere`, que la page d'accueil n'emploie pas : son hero a
+   sa propre structure et reste intact. */
+@media(max-width:860px){
+ .hero .hero-texte h1,.banniere h1,.banniere h2{
+  font-size:var(--text-display-s);line-height:1.1}
+}
+
+
+/* ─── « Ce que nous avons deja produit » : les cartes deux par ligne ───────
+   Cinq cartes pleine largeur empilees faisaient 1136 px, chacune avec son
+   paragraphe d'explication. Deux par ligne, et le paragraphe replie derriere
+   « En savoir plus » : la section se parcourt au lieu de se derouler.
+
+   La ligne d'exemples reste visible — elle tient sur une ligne et c'est elle
+   qui dit de quoi parle la carte.
+
+   Cinq est impair : la derniere carte se retrouverait seule sur une demi-
+   rangee. Elle prend donc la largeur entiere, et garde tout a l'air libre,
+   comme la tuile « Performances » de la page Technologie. */
+@media(max-width:860px){
+ .grille-molecules.grille-molecules{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:.55rem;align-items:start}
+ .grille-molecules.grille-molecules .molecule{min-width:0;padding:var(--space-md)}
+ .grille-molecules.grille-molecules .molecule>*{min-width:0;max-width:100%;overflow-wrap:anywhere}
+ .grille-molecules.grille-molecules .molecule h3{font-size:.86rem;line-height:1.2}
+ .grille-molecules.grille-molecules .molecule .molecule-exemples{font-size:.7rem;line-height:1.25}
+ .grille-molecules.grille-molecules .molecule .molecule-phrase{font-size:.74rem;line-height:1.35}
+ .grille-molecules.grille-molecules .molecule:last-child:nth-child(odd){grid-column:1 / -1}
+}
+
+
+/* ═══ Passe du 23/09 : le pied de page, les appels a l'action, les
+       partenaires d'A propos, et le survol porte au defilement ═════════════ */
+
+
+/* ─── Le pied de page ──────────────────────────────────────────────────────
+   1314 px sur telephone — un cinquieme d'une page, et il est sur les DIX-HUIT.
+   L'essentiel partait en air : 188 px de marges verticales, 104 px de
+   gouttieres, et surtout les deux listes (Navigation, Coordonnees) posees
+   l'une SOUS l'autre alors qu'elles tiennent cote a cote — 588 px pour ce qui
+   en occupe 200.
+
+   Les cibles tactiles ne descendent pas sous 24 px de haut : le corps baisse
+   a 12,8 px (le plancher --text-sm) et la reserve des liens a 0,3 rem, ce qui
+   laisse 27 px. */
+@media(max-width:520px){
+ /* Navigation et Coordonnees cote a cote ; la marque garde toute la largeur. */
+ .pied[data-astro-cid-yrghxkbj] .colonnes[data-astro-cid-yrghxkbj]{
+  grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  column-gap:var(--space-md);row-gap:var(--space-lg);
+  padding-top:var(--space-lg)}
+ .pied[data-astro-cid-yrghxkbj] .bloc-marque[data-astro-cid-yrghxkbj]{grid-column:1 / -1}
+}
+
+@media(max-width:760px){
+ .pied[data-astro-cid-yrghxkbj] .wrap[data-astro-cid-yrghxkbj]{
+  padding-top:var(--space-xl);row-gap:var(--space-lg);
+  /* 4,75 rem : la barre d'action flottante, qui recouvrait « Plan du site ». */
+  padding-bottom:calc(var(--space-md) + 4.75rem)}
+ .pied[data-astro-cid-yrghxkbj] .declaration[data-astro-cid-yrghxkbj]{
+  font-size:var(--text-h2);line-height:1.2}
+ .pied[data-astro-cid-yrghxkbj] .marque-signe[data-astro-cid-yrghxkbj]{height:1.7rem}
+ .pied[data-astro-cid-yrghxkbj] .marque-nom[data-astro-cid-yrghxkbj]{font-size:.92rem}
+ .pied[data-astro-cid-yrghxkbj] .marque-baseline[data-astro-cid-yrghxkbj]{font-size:.66rem}
+ .pied[data-astro-cid-yrghxkbj] .description[data-astro-cid-yrghxkbj]{
+  margin-top:var(--space-sm);font-size:.8rem;line-height:1.45}
+ .pied[data-astro-cid-yrghxkbj] .colonne-titre[data-astro-cid-yrghxkbj]{font-size:.68rem}
+ .pied[data-astro-cid-yrghxkbj] .colonne[data-astro-cid-yrghxkbj] ul[data-astro-cid-yrghxkbj]{
+  margin-top:var(--space-sm);gap:.15rem}
+ .pied[data-astro-cid-yrghxkbj] .colonne[data-astro-cid-yrghxkbj] li[data-astro-cid-yrghxkbj]{
+  /* info@flowindustrie.com fait 148 px pour une colonne de 132 a 320 px de
+     large : sans coupure possible, il sortait de la colonne et venait
+     toucher le bord de l'ecran. */
+  font-size:.8rem;line-height:1.35;overflow-wrap:anywhere}
+ .pied[data-astro-cid-yrghxkbj] .colonne[data-astro-cid-yrghxkbj] a[data-astro-cid-yrghxkbj]{
+  padding-block:.3rem}
+ .pied[data-astro-cid-yrghxkbj] .rangee[data-astro-cid-yrghxkbj]{
+  padding-top:var(--space-md);font-size:.72rem;gap:.1rem var(--space-md)}
+ .pied[data-astro-cid-yrghxkbj] .rangee[data-astro-cid-yrghxkbj] nav[data-astro-cid-yrghxkbj]{
+  gap:var(--space-sm)}
+ .pied[data-astro-cid-yrghxkbj] .rangee[data-astro-cid-yrghxkbj] a[data-astro-cid-yrghxkbj]{
+  padding-block:.3rem}
+}
+
+
+/* ─── Les sections d'appel a l'action ──────────────────────────────────────
+   Leur titre porte une taille en dur — clamp(1.8rem, 3.4vw, 2.5rem) — dont
+   c'est la borne BASSE qui s'applique sur telephone : 28,8 px, soit plus que
+   le h1 de la page (26,4). Il passe dessous, a sa place.
+
+   La classe est repetee au lieu du marqueur de composant : les regles
+   d'origine sont inscrites dans un <style> de chaque page, celle-ci se charge
+   apres et l'emporte a specificite egale. */
+@media(max-width:860px){
+ .cta-fin.cta-fin .wrap.wrap{padding-block:var(--space-xl) var(--space-2xl)}
+ .cta-fin.cta-fin.suivie .wrap.wrap{padding-bottom:var(--space-xl)}
+ .cta-titre.cta-titre{font-size:1.5rem;line-height:1.2}
+ .cta-texte.cta-texte{margin-top:var(--space-sm);font-size:.9rem}
+ .cta-actions.cta-actions{margin-top:var(--space-lg);gap:var(--space-md)}
+ .cta-secondaire.cta-secondaire{font-size:.86rem}
+}
+
+
+/* ─── « Nos partenaires » d'A propos : un rouleau a quatre ─────────────────
+   1513 px empiles : le partenaire majeur, puis trois soutiens l'un sous
+   l'autre. Ce sont quatre partenaires equivalents a lire, pas une sequence :
+   ils passent en rouleau, un par page, et la bande se referme.
+
+   Le majeur devient le premier <li> de la meme liste — c'est ce qui permet a
+   un seul rouleau de les porter tous les quatre. Sur grand ecran il reprend
+   toute la rangee : la disposition d'origine, a l'identique. */
+.soutiens[data-astro-cid-xp7oeim3]{margin-top:var(--space-xl)}
+.soutien-majeur[data-astro-cid-xp7oeim3]{grid-column:1 / -1}
+.partenaire-majeur[data-astro-cid-xp7oeim3]{margin-top:0}
+.partenaires-commandes{display:none}
+
+@media(max-width:900px){
+ .partenaires-rouleau{position:relative}
+ .soutiens[data-astro-cid-xp7oeim3]{display:flex;grid-template-columns:none;
+  overflow-x:auto;overscroll-behavior-x:contain;
+  scroll-snap-type:x mandatory;scroll-padding-inline:var(--pad-wrap);
+  gap:var(--space-md);padding-bottom:.35rem;
+  scrollbar-width:none;-ms-overflow-style:none}
+ .soutiens[data-astro-cid-xp7oeim3]::-webkit-scrollbar{display:none}
+ .soutiens[data-astro-cid-xp7oeim3]>li[data-astro-cid-xp7oeim3]{
+  flex:0 0 80%;scroll-snap-align:center}
+ /* Le majeur cesse de s'etaler ; son article remplit la vignette pour que les
+    quatre cartes aient la meme hauteur. */
+ .soutien-majeur[data-astro-cid-xp7oeim3]{grid-column:auto;display:flex}
+ .partenaire-majeur[data-astro-cid-xp7oeim3]{width:100%;padding:var(--space-lg);
+  border-radius:var(--radius-md)}
+ .partenaire-logos[data-astro-cid-xp7oeim3]{gap:var(--space-md)}
+ .partenaire-logos[data-astro-cid-xp7oeim3] img[data-astro-cid-xp7oeim3]{
+  height:calc(2.1rem * var(--echelle, 1));max-width:9rem}
+ .partenaire-texte[data-astro-cid-xp7oeim3] p[data-astro-cid-xp7oeim3],
+ .soutien[data-astro-cid-xp7oeim3] p[data-astro-cid-xp7oeim3]{font-size:.84rem;line-height:1.45}
+ .partenaire-texte[data-astro-cid-xp7oeim3] h3[data-astro-cid-xp7oeim3],
+ .soutien[data-astro-cid-xp7oeim3] h3[data-astro-cid-xp7oeim3]{font-size:.98rem}
+
+ .partenaires-rouleau[data-actif]{padding-bottom:2.2rem}
+ .partenaires-rouleau[data-actif] .partenaires-commandes{display:contents}
+ .partenaires-rouleau[data-actif] .rouleau-fleche{position:absolute;z-index:3;
+  top:calc(50% - 1.1rem);transform:translateY(-50%)}
+ .partenaires-rouleau[data-actif] [data-partenaires-prec]{left:-.35rem}
+ .partenaires-rouleau[data-actif] [data-partenaires-suiv]{right:-.35rem}
+ .partenaires-rouleau[data-actif] .rouleau-rang{position:absolute;bottom:0;
+  left:50%;transform:translateX(-50%)}
+}
+
+
+/* ─── Le survol, porte au defilement ───────────────────────────────────────
+   Sur grand ecran, passer la souris sur une carte la souleve, allume son
+   filet et avance sa pastille. Un telephone n'a pas de survol : la carte la
+   plus proche du centre de l'ecran prend le relais et passe la main a la
+   suivante en defilant — exactement ce que fait deja la ligne active du
+   tableau « Le constat ».
+
+   AUCUNE animation n'est reecrite ici. Les regles de survol d'origine
+   accueillent [data-survol] a cote de :hover, dans leur propre feuille : les
+   deux ne peuvent donc pas diverger, et leur neutralisation en mouvement
+   reduit vaut pour les deux sans qu'on ait rien a redire.
+
+   Ce qui suit n'ajoute que la transition aux cartes qui n'en portaient pas
+   hors survol, pour que l'allumage se fasse en douceur et non d'un coup. */
+@media(max-width:900px) and (prefers-reduced-motion:no-preference){
+ .survol-carte,
+ .jalon[data-astro-cid-xp7oeim3] .jalon-corps[data-astro-cid-xp7oeim3]:before,
+ .jalon[data-astro-cid-xp7oeim3] .jalon-corps[data-astro-cid-xp7oeim3]>p[data-astro-cid-xp7oeim3]{
+  transition:transform var(--dur) var(--ease-out),border-color var(--dur) var(--ease-out),
+   background-color var(--dur) var(--ease-out),box-shadow var(--dur) var(--ease-out),
+   color var(--dur) var(--ease-out)}
+}
+
+
+/* La frise d'A propos change de forme sous 720 px : le rail passe sur le
+   jalon lui-meme et le point de la chronologie devient .jalon::before —
+   .jalon-corps::before, celui que le survol de bureau grossit, y est
+   display:none. Le point vise n'est donc pas le meme, et cette regle ne
+   peut pas etre le jumeau d'une regle de survol : elle n'existe que sur
+   telephone. Les valeurs, elles, sont celles du survol. */
+@media(max-width:720px){
+ .jalon[data-astro-cid-xp7oeim3][data-survol]:before{
+  background:var(--color-teal);transform:scale(1.35)}
+}
+@media(max-width:720px) and (prefers-reduced-motion:no-preference){
+ .jalon[data-astro-cid-xp7oeim3]:before{
+  transition:background-color var(--dur) var(--ease-out),transform var(--dur) var(--ease-out)}
+}
+@media(max-width:720px) and (prefers-reduced-motion:reduce){
+ .jalon[data-astro-cid-xp7oeim3][data-survol]:before{transform:none}
+}
+
+
+/* ─── Les titres de page restes hors de l'echelle ──────────────────────────
+   Neuf pages ecrivent la taille de leur h1 en dur — clamp(1.8rem, 4vw, 2.8rem)
+   et voisines — dont c'est la borne BASSE qui s'applique sur telephone. Elles
+   affichaient 28,8 px, 30,4 px, 32 px la ou les cinq autres sont a 26,4 : la
+   meme incoherence que celle corrigee le 23/09 pour les heros, sur les pages
+   qui ne chargeaient pas encore cette feuille. Elles rejoignent le jeton.
+
+   Le marqueur de composant est cite ici faute de mieux : ces titres n'ont ni
+   classe ni structure commune a viser. */
+@media(max-width:860px){
+ h1[data-astro-cid-5tznm7mj],        /* Blog */
+ h1[data-astro-cid-7jjqptxk],        /* les quatre articles */
+ h1[data-astro-cid-vze7nfac],        /* Mentions legales */
+ h1[data-astro-cid-yhmnoo4t],        /* Confidentialite */
+ h1[data-astro-cid-zetdm5md],        /* 404 */
+ h1[data-astro-cid-zq3yo2ar],        /* Merci */
+ h1[data-astro-cid-rtrin5e7],        /* Merci candidature */
+ .titre[data-astro-cid-riavxups],    /* Contact */
+ .plan-du-site h1{                   /* Plan du site */
+  font-size:var(--text-display-s)}
+}

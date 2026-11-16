@@ -1,0 +1,21 @@
+# Flow Industrie
+
+> Flow Industrie est une société industrielle française (Île-de-France) qui produit
+> des molécules chimiques en chimie en flux continu, dans ses propres locaux, et livre ses
+> clients industriels en quantités régulières : un produit fabriqué en France, là où
+> ces clients s'approvisionnent aujourd'hui à l'étranger. C'est un modèle de production à
+> façon, assumé. Capacité : du kilo à 100 tonnes par an. Le client n'a pas à être chimiste.
+> Dans un second temps, quand le volume le justifie, l'unité modulaire peut être installée
+> sur le site du client, qui produit alors en flux continu sur place — sans acheter la machine.
+> Arguments clés : origine française, sécurité d'approvisionnement, quantités
+> régulières, RSE.
+
+## Pages principales
+
+- [Accueil](https://www.flowindustrie.com/) : la proposition de valeur en une page — vos molécules produites en France, livrées régulièrement.
+- [La technologie](https://www.flowindustrie.com/technologie/) : la chimie en flux continu expliquée aux non-chimistes — micro-canaux, moins d'un litre en réaction à tout instant, qualité constante, production à la demande, et ce que ça permet à petite échelle. Comparaison batch / flux, et les limites du procédé.
+- [Notre Solution](https://www.flowindustrie.com/applications/) : pharma & biotech, chimie fine, pétrochimie, énergie, agrochimie, défense, spatial, parfumerie & cosmétique. Six critères pour savoir si une molécule relève du flux continu.
+- [L'unité sur votre site](https://www.flowindustrie.com/unite-sur-votre-site/) : l'étape 2 du parcours. Quand le volume et le procédé le justifient, l'unité modulaire s'installe chez le client et y produit en flux continu. Flow ne vend jamais la machine : elle reste sa propriété et le client paie une charge d'exploitation, pas un investissement.
+- [À propos](https://www.flowindustrie.com/a-propos/) : une jeune société fondée par la chimiste Marion Morvan, en Île-de-France. Procédé, méthode et partenaires : Eltia Groupe, TAES, Réseau Entreprendre et Grand Paris Seine & Oise.
+- [Contact](https://www.flowindustrie.com/contact/) : formulaire — réponse d'un ingénieur procédés sous 48 h ouvrées.
+

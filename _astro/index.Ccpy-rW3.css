@@ -1,0 +1,313 @@
+.bandeau-partenaires[data-astro-cid-4k7yywj5]{background:var(--color-paper-2);color:var(--color-ink-2);border-block:1px solid var(--color-rule)}.piste[data-astro-cid-4k7yywj5]{position:relative;flex:1;min-width:0;overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,#000 3rem,#000 calc(100% - 3rem),transparent);mask-image:linear-gradient(to right,transparent,#000 3rem,#000 calc(100% - 3rem),transparent)}.defile[data-astro-cid-4k7yywj5]{--duree: 13s;display:flex;width:max-content;animation:defiler-preuve var(--duree) linear infinite;will-change:transform}.piste[data-astro-cid-4k7yywj5]:hover .defile[data-astro-cid-4k7yywj5]{animation-play-state:paused}@keyframes defiler-preuve{0%{transform:translate(0)}to{transform:translate(-12.5000%)}}.copie[data-astro-cid-4k7yywj5]{display:flex;align-items:baseline;gap:.85rem;padding-inline-end:.85rem}.etiquette[data-astro-cid-4k7yywj5]{flex:none;margin-left:1.6rem;font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--color-teal-clair)}.liste[data-astro-cid-4k7yywj5]{display:flex;flex:none;list-style:none;margin:0;padding:0;column-gap:.5em}.liste[data-astro-cid-4k7yywj5] li[data-astro-cid-4k7yywj5]{white-space:nowrap}.liste[data-astro-cid-4k7yywj5] li[data-astro-cid-4k7yywj5]:not(:last-child):after{content:"";display:inline-block;width:1px;height:.85em;margin-left:.5em;vertical-align:-.08em;background:color-mix(in oklab,var(--color-on-dark) 40%,transparent)}@media(max-width:760px){.piste[data-astro-cid-4k7yywj5]{font-size:.8rem;-webkit-mask-image:linear-gradient(to right,transparent,#000 1.5rem,#000 calc(100% - 1.5rem),transparent);mask-image:linear-gradient(to right,transparent,#000 1.5rem,#000 calc(100% - 1.5rem),transparent)}}@media(prefers-reduced-motion:reduce){.piste[data-astro-cid-4k7yywj5]{overflow-x:auto;-webkit-mask-image:none;mask-image:none}.defile[data-astro-cid-4k7yywj5]{animation:none}.copie[data-astro-cid-4k7yywj5][aria-hidden=true]{display:none}}.reperes[data-astro-cid-kdenjtmw]{border-block:var(--rule);background:var(--color-paper-2)}.reperes[data-astro-cid-kdenjtmw] .wrap[data-astro-cid-kdenjtmw]{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding-block:var(--rythme-demi)}.repere[data-astro-cid-kdenjtmw]{padding-inline:var(--space-lg);border-left:var(--rule)}.repere[data-astro-cid-kdenjtmw]:before{transition:transform var(--dur-apparition) var(--ease-out),width var(--dur) var(--ease-out)}.repere[data-astro-cid-kdenjtmw]:hover:before{width:3rem}.repere[data-astro-cid-kdenjtmw] b[data-astro-cid-kdenjtmw]{transition:color var(--dur) var(--ease-out)}.repere[data-astro-cid-kdenjtmw]:hover b[data-astro-cid-kdenjtmw]{color:var(--color-petrol-deep)}@media(prefers-reduced-motion:reduce){.repere[data-astro-cid-kdenjtmw]:before,.repere[data-astro-cid-kdenjtmw] b[data-astro-cid-kdenjtmw]{transition:none}}.repere[data-astro-cid-kdenjtmw]:first-child{padding-left:0;border-left:0}.repere[data-astro-cid-kdenjtmw]:before{content:"";display:block;width:1.75rem;height:2px;background:var(--color-teal);margin-bottom:var(--space-sm)}html.js-mouvement .wrap[data-astro-cid-kdenjtmw][data-anim-groupe] .repere[data-astro-cid-kdenjtmw]:before{transform:scaleX(0);transform-origin:left center;transition:transform var(--dur-apparition) var(--ease-out)}html.js-mouvement .wrap[data-astro-cid-kdenjtmw][data-anim-groupe].vu .repere[data-astro-cid-kdenjtmw]:before{transform:scaleX(1)}html.js-mouvement .wrap[data-astro-cid-kdenjtmw][data-anim-groupe].vu .repere[data-astro-cid-kdenjtmw]:nth-child(2):before{transition-delay:calc(var(--pas-cascade) * 1)}html.js-mouvement .wrap[data-astro-cid-kdenjtmw][data-anim-groupe].vu .repere[data-astro-cid-kdenjtmw]:nth-child(3):before{transition-delay:calc(var(--pas-cascade) * 2)}.repere[data-astro-cid-kdenjtmw] b[data-astro-cid-kdenjtmw]{display:block;font-family:var(--font-display);font-weight:700;font-size:clamp(1.75rem,2.6vw,2.3rem);line-height:1.05;letter-spacing:-.02em;color:var(--color-petrol);font-variant-numeric:tabular-nums}.repere[data-astro-cid-kdenjtmw] span[data-astro-cid-kdenjtmw]{display:block;margin-top:var(--space-sm);font-size:.92rem;line-height:1.5;color:var(--color-ink-2);max-width:44ch}@media(max-width:840px){.reperes[data-astro-cid-kdenjtmw] .wrap[data-astro-cid-kdenjtmw]{grid-template-columns:minmax(0,1fr);gap:var(--space-md);padding-block:var(--space-lg)}.repere[data-astro-cid-kdenjtmw]{padding-inline:0;border-left:0}.repere[data-astro-cid-kdenjtmw]:not(:first-child){border-top:var(--rule);padding-top:var(--space-md)}.repere[data-astro-cid-kdenjtmw] span[data-astro-cid-kdenjtmw]{max-width:52ch}}.partenaires[data-astro-cid-bcjkuurq]{background:#fff;border-block:var(--rule)}.partenaires[data-astro-cid-bcjkuurq]{padding-block:var(--rythme-demi)}.entete[data-astro-cid-bcjkuurq]{text-align:center}.entete[data-astro-cid-bcjkuurq] h2[data-astro-cid-bcjkuurq]{font-family:var(--font-display);font-size:.76rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--color-petrol)}.entete[data-astro-cid-bcjkuurq] p[data-astro-cid-bcjkuurq]{margin-top:var(--space-xs);font-size:.98rem;color:var(--color-ink-2)}.piste[data-astro-cid-bcjkuurq]{margin-top:var(--space-md)}.grille-logos[data-astro-cid-bcjkuurq]{display:block}@keyframes defiler{0%{transform:translate(0)}to{transform:translate(-25%)}}.logos[data-astro-cid-bcjkuurq]{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(2rem,5vw,4.5rem) clamp(2.5rem,6vw,5.5rem)}.logos[data-astro-cid-bcjkuurq] li[data-astro-cid-bcjkuurq]{display:flex;flex:none;flex-direction:column;align-items:center;justify-content:flex-end;gap:.75rem;text-align:center}.logos[data-astro-cid-bcjkuurq] img[data-astro-cid-bcjkuurq]{height:calc(3.5rem * var(--echelle, 1));width:auto;max-width:22rem;object-fit:contain}@media(max-width:700px){.partenaires[data-astro-cid-bcjkuurq]{padding-block:var(--space-lg)}.piste[data-astro-cid-bcjkuurq]{-webkit-mask-image:linear-gradient(to right,transparent,#000 2rem,#000 calc(100% - 2rem),transparent);mask-image:linear-gradient(to right,transparent,#000 2rem,#000 calc(100% - 2rem),transparent)}.defile[data-astro-cid-bcjkuurq]{--duree: 18s}.logos[data-astro-cid-bcjkuurq]{gap:var(--space-lg);padding-inline-end:var(--space-lg)}.logos[data-astro-cid-bcjkuurq] img[data-astro-cid-bcjkuurq]{height:calc(2.5rem * var(--echelle, 1));max-width:16rem}}@media(prefers-reduced-motion:reduce){.piste[data-astro-cid-bcjkuurq]{overflow:visible;padding-inline:var(--space-lg);-webkit-mask-image:none;mask-image:none}.defile[data-astro-cid-bcjkuurq]{display:block;width:auto;animation:none}.logos[data-astro-cid-bcjkuurq]{flex-wrap:wrap;justify-content:center;padding-inline-end:0;gap:var(--space-lg) var(--space-xl)}.logos[data-astro-cid-bcjkuurq][aria-hidden=true]{display:none}}.hero[data-astro-cid-j7pv25f6]{border-bottom:var(--rule);position:relative;overflow:clip;display:flex;align-items:flex-end;min-height:min(92svh,52rem)}.hero[data-astro-cid-j7pv25f6]:before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(to top,color-mix(in oklab,var(--color-paper) 74%,transparent) 0%,color-mix(in oklab,var(--color-paper) 28%,transparent) 24%,transparent 44%)}.hero[data-astro-cid-j7pv25f6]:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(100deg,var(--color-paper) 0%,color-mix(in oklab,var(--color-paper) 95%,transparent) 40%,color-mix(in oklab,var(--color-paper) 68%,transparent) 56%,color-mix(in oklab,var(--color-paper) 22%,transparent) 68%,transparent 76%)}.hero-grille[data-astro-cid-j7pv25f6]{position:relative;z-index:2;display:grid;width:100%;grid-template-columns:minmax(0,46rem);gap:clamp(var(--space-md),3vw,var(--space-xl));align-items:end;padding-block:clamp(var(--space-lg),2.5vw,var(--space-xl)) clamp(var(--space-xl),4.6vw,var(--space-2xl))}.hero-texte[data-astro-cid-j7pv25f6]>[data-astro-cid-j7pv25f6]{max-width:36rem}.hero-texte[data-astro-cid-j7pv25f6]>h1[data-astro-cid-j7pv25f6],.hero-texte[data-astro-cid-j7pv25f6]>.hero-chapo[data-astro-cid-j7pv25f6]{max-width:100%}.hero-texte[data-astro-cid-j7pv25f6]{position:relative;z-index:1}.hero-photo[data-astro-cid-j7pv25f6]{position:absolute;inset:0;z-index:0;width:100%;max-width:none;height:100%;object-fit:cover;object-position:right center}.hero-surtitre[data-astro-cid-j7pv25f6]{text-wrap:nowrap;font-family:var(--font-display);font-size:.76rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--color-petrol);margin-bottom:var(--space-md)}h1[data-astro-cid-j7pv25f6]{font-size:var(--text-display-s);color:var(--color-petrol-deep)}h1[data-astro-cid-j7pv25f6] em[data-astro-cid-j7pv25f6]{font-style:normal;color:var(--color-petrol);--ep-trait: .14em;background-image:linear-gradient(var(--color-accent),var(--color-accent));background-repeat:no-repeat;background-position:0 100%;background-size:100% var(--ep-trait);padding-bottom:var(--ep-trait);-webkit-box-decoration-break:clone;box-decoration-break:clone}.hero-chapo[data-astro-cid-j7pv25f6]{margin-top:var(--space-md);font-size:var(--text-lg);color:var(--color-ink-2)}.cta[data-astro-cid-j7pv25f6]{margin-top:var(--space-xl);display:flex;align-items:center;gap:var(--space-md) var(--space-lg);flex-wrap:wrap}.hero-appui[data-astro-cid-j7pv25f6]{margin-top:var(--space-lg);display:flex;align-items:baseline;gap:var(--space-md);flex-wrap:wrap;font-size:.9rem}.hero-ancre[data-astro-cid-j7pv25f6]{font-family:var(--font-display);font-weight:600;font-size:.9rem;color:var(--color-petrol);text-decoration-color:var(--color-accent);text-underline-offset:.25rem;white-space:nowrap}.hero-ancre[data-astro-cid-j7pv25f6]:hover{color:var(--color-accent-ink)}.hero-note[data-astro-cid-j7pv25f6]{color:var(--color-muted)}.split[data-astro-cid-j7pv25f6]{padding-block:var(--rythme-demi);scroll-margin-top:var(--h-entete)}.constat-tete[data-astro-cid-j7pv25f6]{padding-bottom:var(--space-xl);border-bottom:var(--rule)}.constat-tete[data-astro-cid-j7pv25f6] .titre-section[data-astro-cid-j7pv25f6]{max-width:34ch}.solution[data-astro-cid-j7pv25f6]{background:var(--color-paper-2);border-top:var(--rule);scroll-margin-top:var(--h-entete)}.solution[data-astro-cid-j7pv25f6] .wrap[data-astro-cid-j7pv25f6]{padding-block:var(--rythme-demi)}.solution-tete[data-astro-cid-j7pv25f6] .titre-section[data-astro-cid-j7pv25f6]{max-width:34ch}.trajet[data-astro-cid-j7pv25f6]{margin-top:var(--space-2xl);list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-lg)}.trajet[data-astro-cid-j7pv25f6] li[data-astro-cid-j7pv25f6]{background:var(--color-paper);border:var(--rule);border-radius:var(--radius-md);padding:var(--space-lg);display:grid;gap:var(--space-sm);align-content:start}.trajet-filet[data-astro-cid-j7pv25f6]{display:block;width:2.5rem;height:2px;background:var(--color-teal);margin-bottom:var(--space-xs)}.trajet-titre[data-astro-cid-j7pv25f6]{font-family:var(--font-display);font-size:1.05rem;font-weight:600;line-height:1.25;color:var(--color-petrol-deep)}.trajet-texte[data-astro-cid-j7pv25f6]{font-size:.98rem;line-height:1.55;color:var(--color-ink-2)}.solution-liens[data-astro-cid-j7pv25f6]{margin-top:var(--space-xl);display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-md)}.solution-etape2[data-astro-cid-j7pv25f6]{margin-top:var(--space-xl);max-width:62ch;padding:var(--space-lg);background:var(--color-paper);border:var(--rule);border-left:.1875rem solid var(--color-teal);border-radius:0 var(--radius-md) var(--radius-md) 0;display:grid;gap:var(--space-sm);justify-items:start}.solution-etape2[data-astro-cid-j7pv25f6] p[data-astro-cid-j7pv25f6]{font-size:.98rem;line-height:1.55;color:var(--color-ink-2)}@media(max-width:900px){.trajet[data-astro-cid-j7pv25f6]{grid-template-columns:minmax(0,1fr)}}.bascule-cadre[data-astro-cid-j7pv25f6]{margin-top:var(--space-xl)}.bascule[data-astro-cid-j7pv25f6]{width:100%;border-collapse:separate;border-spacing:0;text-align:left}.bascule[data-astro-cid-j7pv25f6] caption[data-astro-cid-j7pv25f6].legende-masquee{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}.bascule[data-astro-cid-j7pv25f6] th[data-astro-cid-j7pv25f6],.bascule[data-astro-cid-j7pv25f6] td[data-astro-cid-j7pv25f6]{padding:1.15rem var(--space-md);vertical-align:top;border-bottom:var(--rule)}.bascule[data-astro-cid-j7pv25f6] thead[data-astro-cid-j7pv25f6] th[data-astro-cid-j7pv25f6]{font-family:var(--font-display);font-size:.95rem;font-weight:600;line-height:1.3;color:var(--color-petrol-deep);padding-block:var(--space-md)}.bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] th[data-astro-cid-j7pv25f6]{width:50%;font-family:var(--font-display);font-size:.98rem;font-weight:600;line-height:1.4;color:var(--color-petrol-deep)}.bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] td[data-astro-cid-j7pv25f6]{font-size:.98rem}.col-flow[data-astro-cid-j7pv25f6]{background:var(--color-petrol-deep);border-bottom-color:#EDF2F624;color:var(--color-on-dark)}.bascule[data-astro-cid-j7pv25f6] thead[data-astro-cid-j7pv25f6] .col-flow[data-astro-cid-j7pv25f6]{color:var(--color-teal-clair);border-radius:var(--radius-md) var(--radius-md) 0 0}.bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] td[data-astro-cid-j7pv25f6].col-flow{color:var(--color-on-dark);line-height:1.5}.bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] tr[data-astro-cid-j7pv25f6]:last-child .col-flow[data-astro-cid-j7pv25f6]{border-bottom:0;border-radius:0 0 var(--radius-md) var(--radius-md)}.bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] tr[data-astro-cid-j7pv25f6]:last-child th[data-astro-cid-j7pv25f6]{border-bottom:0}.bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] tr[data-astro-cid-j7pv25f6] th[data-astro-cid-j7pv25f6],.bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] tr[data-astro-cid-j7pv25f6] td[data-astro-cid-j7pv25f6]{transition:background-color var(--dur) var(--ease-out)}.bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] tr[data-astro-cid-j7pv25f6]:hover th[data-astro-cid-j7pv25f6],.bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] tr[data-astro-cid-j7pv25f6]:hover td[data-astro-cid-j7pv25f6]{background-color:var(--color-paper-2)}.bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] tr[data-astro-cid-j7pv25f6]:hover td[data-astro-cid-j7pv25f6].col-flow{background-color:color-mix(in oklab,#fff 9%,var(--color-petrol-deep))}@media(max-width:760px){.bascule[data-astro-cid-j7pv25f6] thead[data-astro-cid-j7pv25f6]{display:none}.bascule[data-astro-cid-j7pv25f6],.bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6],.bascule[data-astro-cid-j7pv25f6] tr[data-astro-cid-j7pv25f6],.bascule[data-astro-cid-j7pv25f6] thead[data-astro-cid-j7pv25f6] th[data-astro-cid-j7pv25f6],.bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] th[data-astro-cid-j7pv25f6],.bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] td[data-astro-cid-j7pv25f6]{display:block;width:auto}.bascule[data-astro-cid-j7pv25f6] tr[data-astro-cid-j7pv25f6]{margin-bottom:var(--space-lg)}.bascule[data-astro-cid-j7pv25f6] tr[data-astro-cid-j7pv25f6]:last-child{margin-bottom:0}.bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] th[data-astro-cid-j7pv25f6],.bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] tr[data-astro-cid-j7pv25f6]:last-child th[data-astro-cid-j7pv25f6]{padding:0 0 var(--space-sm);border-bottom:0;font-size:1.02rem}.bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] td[data-astro-cid-j7pv25f6].col-flow,.bascule[data-astro-cid-j7pv25f6] tbody[data-astro-cid-j7pv25f6] tr[data-astro-cid-j7pv25f6]:last-child td[data-astro-cid-j7pv25f6].col-flow{border-bottom:0;border-radius:var(--radius-sm);padding:var(--space-md)}}.constat-pied[data-astro-cid-j7pv25f6]{margin-top:var(--space-xl);padding-top:var(--space-lg);border-top:var(--rule);display:grid;gap:var(--space-sm);justify-items:start;color:var(--color-ink-2)}.constat-liens[data-astro-cid-j7pv25f6]{display:flex;align-items:center;flex-wrap:wrap;gap:var(--space-md)}.deroulement[data-astro-cid-j7pv25f6]{background:var(--color-petrol-deep);scroll-margin-top:var(--h-entete)}.deroulement[data-astro-cid-j7pv25f6] .titre-section[data-astro-cid-j7pv25f6]{color:var(--color-on-dark)}.deroulement[data-astro-cid-j7pv25f6] .chapo[data-astro-cid-j7pv25f6]{color:var(--color-on-dark-2)}.deroulement[data-astro-cid-j7pv25f6] .surtitre-section[data-astro-cid-j7pv25f6]{color:var(--color-teal-clair)}.deroulement[data-astro-cid-j7pv25f6] .chapo-lien[data-astro-cid-j7pv25f6]{margin-top:var(--space-sm)}.deroulement[data-astro-cid-j7pv25f6] .lien-texte[data-astro-cid-j7pv25f6]{color:var(--color-on-dark);text-decoration-color:var(--color-teal)}.deroulement[data-astro-cid-j7pv25f6] .lien-texte[data-astro-cid-j7pv25f6]:hover{color:var(--color-teal-clair);text-decoration-color:var(--color-teal-clair)}.deroulement[data-astro-cid-j7pv25f6] .ecran[data-astro-cid-j7pv25f6]{display:grid;grid-template-columns:minmax(0,26rem) minmax(0,1fr);gap:var(--space-2xl);align-items:center;padding-left:max(var(--pad-wrap),calc((100% - 82rem) / 2 + var(--pad-wrap)));padding-block:var(--rythme-demi)}.deroulement[data-astro-cid-j7pv25f6][data-pilotage] .piste[data-astro-cid-j7pv25f6]{height:calc(100vh - var(--h-entete) + 80vh)}.deroulement[data-astro-cid-j7pv25f6][data-pilotage] .ecran[data-astro-cid-j7pv25f6]{position:sticky;top:var(--h-entete);min-height:0;padding-block:var(--rythme-demi)}@media(max-width:900px){.deroulement[data-astro-cid-j7pv25f6] .ecran[data-astro-cid-j7pv25f6]{grid-template-columns:minmax(0,1fr);gap:var(--space-xl)}}.split-piliers[data-astro-cid-j7pv25f6]{background:var(--color-paper-2);border-bottom:var(--rule);scroll-margin-top:var(--h-entete)}.split-piliers[data-astro-cid-j7pv25f6] .piste[data-astro-cid-j7pv25f6]{height:calc(100vh - var(--h-entete) + 120vh)}.split-piliers[data-astro-cid-j7pv25f6] .ecran[data-astro-cid-j7pv25f6]{position:sticky;--h-ecran: calc(31.875rem + 2 * var(--rythme-demi));top:max(var(--h-entete),calc(var(--h-entete) + (100vh - var(--h-entete) - var(--h-ecran)) / 2));min-height:0;padding-block:var(--rythme-demi);display:grid;grid-template-columns:minmax(0,30rem) minmax(0,1fr);gap:var(--space-2xl);align-items:center}.split-piliers[data-astro-cid-j7pv25f6] .titre-section[data-astro-cid-j7pv25f6]{font-size:var(--text-display-s);line-height:1.04;letter-spacing:-.02em;max-width:18ch}.surtitre-section[data-astro-cid-j7pv25f6]{font-family:var(--font-display);font-size:.76rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--color-petrol);margin-bottom:var(--space-md)}@media(max-width:900px){.split-piliers[data-astro-cid-j7pv25f6] .piste[data-astro-cid-j7pv25f6]{height:auto}.split-piliers[data-astro-cid-j7pv25f6] .ecran[data-astro-cid-j7pv25f6]{position:static;min-height:0;grid-template-columns:minmax(0,1fr);gap:var(--space-xl);padding-block:var(--rythme-demi)}}.secteurs[data-astro-cid-j7pv25f6] .wrap[data-astro-cid-j7pv25f6]{padding-block:var(--rythme-demi)}.secteurs[data-astro-cid-j7pv25f6] .titre-section[data-astro-cid-j7pv25f6]{font-size:var(--text-display-s);line-height:1.04;letter-spacing:-.02em}.secteurs-cta[data-astro-cid-j7pv25f6]{margin-top:var(--space-lg)}@media(max-width:1080px){.hero-grille[data-astro-cid-j7pv25f6]{grid-template-columns:minmax(0,26rem)}.hero-texte[data-astro-cid-j7pv25f6]>h1[data-astro-cid-j7pv25f6],.hero-texte[data-astro-cid-j7pv25f6]>.hero-chapo[data-astro-cid-j7pv25f6]{max-width:36rem}}@media(min-width:861px)and (max-width:1080px){.hero-texte[data-astro-cid-j7pv25f6]>h1[data-astro-cid-j7pv25f6] br[data-astro-cid-j7pv25f6]{display:none}.hero-texte[data-astro-cid-j7pv25f6]>h1[data-astro-cid-j7pv25f6]{font-size:clamp(2.4rem,3.25vw,2.6rem)}}@media(max-width:860px){.hero[data-astro-cid-j7pv25f6]{display:block;aspect-ratio:auto;overflow:visible}.hero-grille[data-astro-cid-j7pv25f6]{padding-block:clamp(var(--space-xl),5vw,var(--space-2xl)) var(--rythme-demi)}.hero[data-astro-cid-j7pv25f6]:after{content:none}.hero[data-astro-cid-j7pv25f6]:before{content:none}.hero[data-astro-cid-j7pv25f6]{display:block;min-height:0}.hero-grille[data-astro-cid-j7pv25f6]{align-items:stretch}.hero-grille[data-astro-cid-j7pv25f6]{grid-template-columns:minmax(0,1fr);gap:var(--space-xl)}.hero-photo[data-astro-cid-j7pv25f6]{position:static;width:100%;justify-self:stretch;margin-right:0;margin-top:var(--space-xl);aspect-ratio:3 / 2;height:auto;object-fit:cover;object-position:70% center}.hero-texte[data-astro-cid-j7pv25f6]>h1[data-astro-cid-j7pv25f6],.hero-texte[data-astro-cid-j7pv25f6]>.hero-chapo[data-astro-cid-j7pv25f6]{width:auto;max-width:36rem}}@media(max-width:420px){.cta[data-astro-cid-j7pv25f6] .btn[data-astro-cid-j7pv25f6]{width:100%}}
+
+.bandeau-interieur[data-astro-cid-4k7yywj5]{display:flex;align-items:center;gap:clamp(.9rem,2.4vw,2rem);padding-inline:var(--pad-wrap)}
+.bandeau-mention[data-astro-cid-4k7yywj5]{flex:none;display:flex;align-items:center;gap:.45rem;margin:0;padding-block:0;height:2.6rem;padding-inline-end:clamp(.9rem,2.4vw,2rem);border-inline-end:1px solid var(--color-rule);font-family:var(--font-display);font-size:.75rem;font-weight:600;color:var(--color-petrol);white-space:nowrap}
+.bandeau-mention[data-astro-cid-4k7yywj5] .glyphe[data-astro-cid-4k7yywj5]{color:var(--color-teal-texte);flex:none}
+.bandeau-mention[data-astro-cid-4k7yywj5] b{font-size:.92rem;font-weight:700;color:var(--color-petrol-deep)}
+.logos-bande[data-astro-cid-4k7yywj5]{--ecart:clamp(2rem,4.5vw,3.8rem);display:flex;align-items:center;list-style:none;margin:0;padding-inline:calc(var(--ecart) / 2);gap:var(--ecart)}
+.logos-bande[data-astro-cid-4k7yywj5] li{flex:none;height:2.6rem;display:grid;place-items:center}
+.logos-bande[data-astro-cid-4k7yywj5] img{max-height:calc(1.15rem * var(--echelle, 1));width:auto;max-width:9rem;object-fit:contain}
+@media (max-width:760px){
+.bandeau-interieur[data-astro-cid-4k7yywj5]{flex-direction:column;align-items:stretch;gap:0;padding-inline:0}
+.bandeau-mention[data-astro-cid-4k7yywj5]{justify-content:center;border-inline-end:0;border-block-end:1px solid var(--color-rule);padding-inline:var(--pad-wrap);padding-block:.5rem;height:auto;font-size:.72rem;white-space:normal;text-align:center}
+.logos-bande[data-astro-cid-4k7yywj5] li{height:2.4rem}
+.logos-bande[data-astro-cid-4k7yywj5] img{max-height:calc(1.05rem * var(--echelle, 1))}
+}
+@media (prefers-reduced-motion:reduce){
+.piste[data-astro-cid-4k7yywj5]{overflow-x:auto;-webkit-mask-image:none;mask-image:none}
+.defile[data-astro-cid-4k7yywj5]{animation:none}
+.logos-bande[data-astro-cid-4k7yywj5][aria-hidden=true]{display:none}
+}
+.nom-partenaire[data-astro-cid-bcjkuurq]{font-family:var(--font-display);font-size:.78rem;font-weight:600;letter-spacing:.02em;color:var(--color-muted)}
+/* ——— « Processus de projet » sur l'accueil : une colonne, sans defilement pilote ———
+   Les memes regles servent la page Applications, ou le rail horizontal reste :
+   c'est pourquoi tout est porte par .deroulement-colonne, dans la feuille de l'accueil. */
+.deroulement-colonne.deroulement-colonne .ecran[data-astro-cid-j7pv25f6]{grid-template-columns:minmax(0,1fr);gap:var(--space-xl);
+ align-items:start;position:static;padding-block:var(--rythme-demi)}
+.deroulement-colonne.deroulement-colonne .piste[data-astro-cid-j7pv25f6]{height:auto}
+.deroulement-colonne.deroulement-colonne .zone[data-astro-cid-ynlpztoc]{overflow-x:visible;overflow-y:visible;scroll-snap-type:none;
+ overscroll-behavior-x:auto}
+.deroulement-colonne.deroulement-colonne .rail[data-astro-cid-ynlpztoc]{display:grid;grid-template-columns:minmax(0,1fr);
+ gap:var(--space-md);transform:none!important;will-change:auto}
+.deroulement-colonne.deroulement-colonne .case[data-astro-cid-ynlpztoc]{display:block;flex:none;scroll-snap-align:none}
+.deroulement-colonne.deroulement-colonne .case-butoir[data-astro-cid-ynlpztoc]{display:none}
+.deroulement-colonne.deroulement-colonne .carte[data-astro-cid-ynlpztoc]{transform:none}
+.deroulement-colonne.deroulement-colonne .carte[data-astro-cid-ynlpztoc]:hover{transform:none}
+.deroulement-colonne.deroulement-colonne .frise[data-astro-cid-z3vkjzr4]{display:none}
+/* Le titre tient sur une ligne des qu'il y a la largeur pour ; en dessous il se
+   replie, faute de quoi il deborderait de l'ecran. */
+@media (min-width:760px){
+ .deroulement-colonne.deroulement-colonne .titre-section[data-astro-cid-j7pv25f6]{max-width:none;white-space:nowrap;
+  font-size:clamp(1.35rem,2.55vw,2.2rem)}
+}
+
+/* ——— Cases de « Notre solution » : une zone d'image en haut, le texte en bas ———
+   La zone attend une vraie photo ; en l'absence d'images libres de droits, elle
+   porte pour l'instant le glyphe de l'etape, en grand et en retrait. Poser un
+   <img> a l'interieur suffira a la remplacer. */
+.trajet li{padding:0!important;overflow:hidden;grid-template-rows:auto 1fr;gap:0!important;
+ min-height:22rem}
+.trajet-image{display:grid;place-items:center;aspect-ratio:16/10;
+ background:linear-gradient(160deg,var(--color-paper-2),color-mix(in oklab,var(--color-teal) 10%,var(--color-paper-2)));
+ border-bottom:var(--rule);color:color-mix(in oklab,var(--color-teal) 62%,transparent)}
+.trajet-image>img{grid-area:1/1;width:100%;height:100%;object-fit:cover}
+.trajet-image>svg{grid-area:1/1}
+.trajet-image.avec-photo>svg{display:none}
+.trajet-corps{display:grid;align-content:end;gap:var(--space-sm);padding:var(--space-lg)}
+@media (max-width:900px){.trajet li{min-height:0}.trajet-image{aspect-ratio:21/9}}
+
+/* ——— Hero : la mention devient deux points verifies ——— */
+ul.hero-appui{list-style:none;margin:var(--space-lg) 0 0;padding:0;
+ display:flex;flex-wrap:wrap;gap:.55rem var(--space-lg);font-size:.9rem}
+ul.hero-appui li{display:flex;align-items:center;gap:.45rem;color:var(--color-ink-2)}
+ul.hero-appui .glyphe{flex:none;color:var(--color-teal-texte)}
+
+/* ——— Drapeau du surtitre : un disque, pas un rectangle ——— */
+.drapeau[data-astro-cid-j7pv25f6]{display:inline-grid;white-space:nowrap;place-items:center;width:1.05em;height:1.05em;
+ margin-left:.5em;border-radius:50%;overflow:hidden;vertical-align:-.16em;
+ box-shadow:0 0 0 1px color-mix(in oklab,var(--color-ink) 18%,transparent)}
+.drapeau[data-astro-cid-j7pv25f6] svg{width:100%;height:100%;object-fit:cover}
+
+/* ——— « Nos valeurs ajoutees » : le titre revient a la taille des autres sections ——— */
+.split-piliers[data-astro-cid-j7pv25f6] .titre-section[data-astro-cid-j7pv25f6]{font-size:var(--text-h2);line-height:1.12;
+ letter-spacing:-.01em;max-width:24ch}
+
+/* ——— « Notre solution » : les trois cases s'alignent ligne a ligne ———
+   Sans cela, des textes de longueurs differentes decalent les titres entre eux :
+   la sous-grille fait partager aux trois cases les memes rangees. */
+.trajet[data-astro-cid-j7pv25f6]{grid-template-rows:auto auto auto 1fr}
+.trajet[data-astro-cid-j7pv25f6] li{grid-row:span 4;grid-template-rows:subgrid;align-content:stretch}
+.trajet-corps[data-astro-cid-j7pv25f6]{display:grid;grid-row:span 3;grid-template-rows:subgrid;
+ align-content:start;gap:var(--space-sm);padding:var(--space-lg)}
+@supports not (grid-template-rows:subgrid){
+ .trajet[data-astro-cid-j7pv25f6] li{grid-row:auto}
+ .trajet-corps[data-astro-cid-j7pv25f6]{grid-row:auto;grid-template-rows:auto auto 1fr}
+}
+
+/* ——— Processus : les cases s'effacent, une ligne a points les remplace ———
+   Le contenu reste, le contenant disparait. La ligne court a gauche de la
+   colonne ; chaque point se cale a la hauteur du titre de son etape, ce qui
+   suffit a les espacer : deux titres ne peuvent pas se retrouver au meme niveau. */
+.deroulement-colonne.deroulement-colonne .zone[data-astro-cid-ynlpztoc]{position:relative;padding-left:clamp(2.6rem,5vw,4.2rem)}
+.deroulement-colonne.deroulement-colonne .rail[data-astro-cid-ynlpztoc]{position:relative}
+/* La ligne est decoupee en un segment par etape : chacun se trace en meme temps
+   que son etape apparait, comme la chronologie de « L'histoire » sur A propos. */
+/* Chaque segment part du point de son etape et s'arrete exactement sur le
+   point de la suivante. --point-y est la demi-hauteur de la ligne du titre :
+   c'est la que le point est centre. La hauteur vaut donc la case plus la
+   gouttiere qui la separe de la suivante. */
+.deroulement-colonne.deroulement-colonne .case[data-astro-cid-ynlpztoc]{--point-y:calc(var(--text-h3) * .55)}
+.deroulement-colonne.deroulement-colonne .case[data-astro-cid-ynlpztoc]:after{content:"";position:absolute;
+ top:var(--point-y);height:calc(100% + var(--space-md));
+ left:calc(clamp(2.6rem,5vw,4.2rem) * -0.5 - 1px);width:2px;
+ background:color-mix(in oklab,var(--color-on-dark) 22%,transparent);
+ transform-origin:top center;transition:scale var(--dur-apparition) var(--ease-out) .18s}
+.deroulement-colonne.deroulement-colonne .case[data-astro-cid-ynlpztoc]:nth-last-child(2):after{display:none}
+html.js-mouvement .deroulement-colonne .case[data-anim]:not(.vu):after{scale:1 0}
+.deroulement-colonne.deroulement-colonne .carte[data-astro-cid-ynlpztoc]{background:none;border:0;box-shadow:none;padding:0 0 var(--space-lg) 0}
+.deroulement-colonne.deroulement-colonne .case[data-astro-cid-ynlpztoc]{position:relative}
+.deroulement-colonne.deroulement-colonne .case[data-astro-cid-ynlpztoc]:last-child .carte[data-astro-cid-ynlpztoc]{padding-bottom:0}
+.deroulement-colonne.deroulement-colonne .tete-titre[data-astro-cid-ynlpztoc]{position:relative;z-index:1}
+.deroulement-colonne.deroulement-colonne .tete-titre[data-astro-cid-ynlpztoc]:after{content:"";position:absolute;top:50%;
+ left:calc(clamp(2.6rem,5vw,4.2rem) * -0.5 - .3125rem);
+ width:.75rem;height:.75rem;border-radius:50%;
+ background:var(--color-teal-clair);
+ box-shadow:0 0 0 .25rem var(--color-petrol-deep);
+ transform:translateY(-50%)}
+.deroulement-colonne.deroulement-colonne .carte[data-astro-cid-ynlpztoc]:hover{background:none}
+
+
+/* ——— « Notre solution » : l'encart passe a droite, les boutons prennent sa place ———
+   Les deux blocs partageaient la pleine largeur l'un sous l'autre ; ils se
+   partagent maintenant la meme ligne, l'appel a l'action a gauche. */
+.solution-pied[data-astro-cid-j7pv25f6]{margin-top:var(--space-xl);display:grid;
+ grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-lg);align-items:center}
+.solution-pied.solution-pied[data-astro-cid-j7pv25f6]>*{margin-top:0}
+@media (max-width:900px){
+ .solution-pied[data-astro-cid-j7pv25f6]{grid-template-columns:minmax(0,1fr)}
+}
+
+
+/* ——— Le hero remonte un peu ———
+   Le bloc de texte s'arretait a 67 px du bas ; on ajoute du talon sous lui
+   plutot que de toucher a la hauteur du hero, pour ne pas recadrer la photo. */
+@media (min-width:861px){
+ .hero-grille[data-astro-cid-j7pv25f6]{padding-bottom:calc(clamp(var(--space-xl),4.6vw,var(--space-2xl)) + clamp(1.25rem,2.8vw,3rem))}
+}
+
+/* ——— « Processus de projet » : une icone de chimie en filigrane, a droite ———
+   C'est le glyphe de fiole deja utilise par la section « Notre solution »,
+   agrandi et reduit a ses contours. Il est decoratif : hors du flux, sans
+   evenement de souris, et ignore par les lecteurs d'ecran. La colonne de
+   texte est bornee pour lui laisser la place. */
+.deroulement-colonne.deroulement-colonne{position:relative;overflow:clip}
+.filigrane-chimie[data-astro-cid-j7pv25f6]{position:absolute;z-index:0;pointer-events:none;
+ top:50%;right:clamp(3rem,13.5vw,18rem);translate:0 -38%;
+ width:clamp(11rem,24vw,28rem);aspect-ratio:15 / 18;color:#fff;opacity:.3}
+.filigrane-chimie[data-astro-cid-j7pv25f6] svg[data-astro-cid-j7pv25f6]{width:100%;height:100%;display:block;
+ stroke-width:.15rem;vector-effect:non-scaling-stroke}
+.filigrane-chimie[data-astro-cid-j7pv25f6] svg[data-astro-cid-j7pv25f6] *{vector-effect:non-scaling-stroke}
+.deroulement-colonne.deroulement-colonne .piste[data-astro-cid-j7pv25f6]{position:relative;z-index:1}
+@media (min-width:1081px){
+ .deroulement-colonne.deroulement-colonne .rail[data-astro-cid-ynlpztoc]{max-width:64ch}
+ .deroulement-colonne.deroulement-colonne .cadrage[data-astro-cid-j7pv25f6]{max-width:64ch}
+}
+@media (max-width:1080px){
+ .filigrane-chimie[data-astro-cid-j7pv25f6]{display:none}
+}
+
+/* ——— Processus : les trois numeros d'etape en blanc ———
+   .num etait en turquoise clair, et seule la carte « active » du rail
+   horizontal passait au blanc. En colonne, il n'y a plus de carte active :
+   les trois numeros se lisent donc de la meme facon. */
+.deroulement-colonne.deroulement-colonne .num[data-astro-cid-ynlpztoc]{color:var(--color-on-dark)}
+
+/* ——— Processus : la case s'agrandit au survol ———
+   L'origine est en haut a gauche pour que le point de la frise, place tout en
+   haut du bloc, ne se decale pas de la ligne. */
+.deroulement-colonne.deroulement-colonne .carte[data-astro-cid-ynlpztoc]{
+ transform-origin:left top;transition:transform var(--dur) var(--ease-out)}
+@media (hover:hover) and (pointer:fine){
+ .deroulement-colonne.deroulement-colonne .case[data-astro-cid-ynlpztoc]:hover .carte[data-astro-cid-ynlpztoc]{
+  transform:scale(1.02)}
+}
+@media (prefers-reduced-motion:reduce){
+ .deroulement-colonne.deroulement-colonne .carte[data-astro-cid-ynlpztoc]{transition:none}
+ .deroulement-colonne.deroulement-colonne .case[data-astro-cid-ynlpztoc]:hover .carte[data-astro-cid-ynlpztoc]{transform:none}
+}
+
+
+/* ─── Les cases du parcours, sur petit ecran — 20/09/2026 ───────────────────
+   Chaque case est une grille d'une colonne implicite, dimensionnee au contenu.
+   L'image porte un aspect-ratio : sa hauteur venant de la rangee, sa largeur
+   s'en deduisait et atteignait 492 px dans une case de 340. Le debordement
+   etant masque (overflow:hidden sur le li), le texte etait tranche en plein
+   mot — « Nous developpons et validons le procede a… molecule. ». Borner la
+   colonne suffit : l'image retrouve sa largeur et l'aspect-ratio sa hauteur. */
+.trajet li{grid-template-columns:minmax(0,1fr)}
+
+
+/* ─── Reprise de la version telephone — 20/09/2026 ─────────────────────────── */
+
+@media(max-width:900px){
+ /* Le surtitre du hero etait en text-wrap:nowrap : il lui fallait 440 px, il en
+    avait 340. « 100% Français 🇫🇷 » — la phrase qui porte le positionnement —
+    etait purement et simplement coupee de l'ecran. */
+ /* Le surtitre repasse dans le bleu profond du titre. Sur la photo, son bleu
+    d'origine ne donnait que 3,5:1 — sous le seuil. Le foncer coute une nuance ;
+    epaissir le voile jusqu'au meme resultat aurait coute la moitie du relief
+    de l'image, c'est-a-dire l'inverse de ce qu'on cherche ici. */
+ .hero-surtitre[data-astro-cid-j7pv25f6]{text-wrap:wrap;line-height:1.5;font-size:.8rem;
+  color:var(--color-petrol-deep)}
+ /* V3, 05/10/2026 : le tableau n'a plus qu'une colonne, « Avec Flow Industrie ».
+    Les etiquettes de colonne posees ici devant chaque cellule sont retirees :
+    l'en-tete suffit a dire ce qu'on lit. */
+}
+
+
+/* ─── Tailles de texte sur telephone — 20/09/2026 ───────────────────────────
+   Le bandeau des partenaires tombait a 11,5 px, sous le plancher de lisibilite. */
+@media(max-width:760px){
+ .bandeau-mention[data-astro-cid-4k7yywj5]{font-size:.82rem}
+}
+
+
+/* ─── Hero de l'accueil sur telephone et tablette — 20/09/2026 ──────────────
+   La photo se retrouvait seule, en bandeau, sous le texte : deux blocs poses
+   l'un sur l'autre au lieu d'une image d'ouverture. Elle repasse derriere le
+   texte, comme sur grand ecran.
+
+   Le voile est vertical et non plus diagonal : en portrait il n'y a pas de
+   place pour un cote texte et un cote image.
+
+   La photo ne couvre que le haut du hero, et c'est voulu. En object-fit:cover,
+   la tranche visible depend du rapport de la boite : plein cadre (375x753) on
+   ne voyait que 406 px de source, un bout de bidon et une main. Une boite plus
+   basse elargit la tranche — a 52 % de la hauteur on en voit 781, soit
+   l'etabli, les trois bidons, les deux mains et l'atelier derriere. Le voile
+   devient opaque juste avant le bas de l'image : la coupure ne se voit pas.
+
+   Les valeurs du voile sont mesurees, pas estimees : contraste calcule sur la
+   composition reelle. Le surtitre — le plus petit, le plus haut, donc le moins
+   couvert, et desormais sur la manche sombre de l'operateur — est a 5,7:1 pour
+   4,5 requis ; le titre a 6,5:1 pour 3 ; le chapo a 12,7:1. Deux crans plus
+   clair il tombait a 3,7:1, illisible. */
+/* <picture> ne doit pas exister pour la mise en page : l'image reste un enfant
+   direct du hero, positionnee par rapport a lui, a toutes les largeurs. */
+.hero[data-astro-cid-j7pv25f6] picture[data-astro-cid-j7pv25f6]{display:contents}
+
+@media(max-width:860px){
+ .hero[data-astro-cid-j7pv25f6]{position:relative;overflow:clip;
+  display:flex;align-items:flex-end;min-height:calc(100svh - var(--h-entete))}
+ .hero[data-astro-cid-j7pv25f6]:after{content:none}
+ .hero[data-astro-cid-j7pv25f6]:before{content:"";position:absolute;inset:0;z-index:1;
+  pointer-events:none;
+  background:linear-gradient(to bottom,
+   color-mix(in oklab,var(--color-paper) 40%,transparent) 0%,
+   color-mix(in oklab,var(--color-paper) 55%,transparent) 30%,
+   color-mix(in oklab,var(--color-paper) 68%,transparent) 55%,
+   color-mix(in oklab,var(--color-paper) 76%,transparent) 78%,
+   color-mix(in oklab,var(--color-paper) 80%,transparent) 100%)}
+ .hero-photo[data-astro-cid-j7pv25f6]{position:absolute;inset:0;z-index:0;margin:0;
+  width:100%;height:100%;max-width:none;aspect-ratio:auto;
+  object-fit:cover;object-position:50% center}
+ .hero-grille[data-astro-cid-j7pv25f6]{position:relative;z-index:2}
+}
+
+
+/* ═══ Reprise de la version telephone — 21/09/2026 ═══════════════════════════
+   Demandes de Tom, revue mobile du 21/09. Chaque bloc porte la raison du
+   reglage : ce qui est mesure, ce qui est un choix. */
+
+
+/* ─── Hero : le chapo retrecit, et les deux appels a l'action se rangent
+   cote a cote ───────────────────────────────────────────────────────────────
+   Le chapo etait a 21 px, la meme taille que sur grand ecran : quatre lignes
+   pleine largeur qui poussaient les boutons hors de l'ecran d'accueil.
+   Les deux boutons s'empilaient parce que `.cta .btn{width:100%}` sous 420 px
+   forcait le premier a prendre toute la ligne. */
+@media(max-width:860px){
+ .hero-chapo[data-astro-cid-j7pv25f6]{font-size:1rem;line-height:1.5;
+  margin-top:var(--space-sm)}
+ .cta[data-astro-cid-j7pv25f6]{flex-wrap:nowrap;align-items:center;
+  gap:.7rem;margin-top:var(--space-lg)}
+ .cta[data-astro-cid-j7pv25f6] .btn[data-astro-cid-j7pv25f6]{width:auto;flex:0 1 auto;
+  font-size:.82rem;padding:.72rem .9rem;white-space:nowrap}
+ .hero-ancre[data-astro-cid-j7pv25f6]{font-size:.78rem;line-height:1.25;
+  white-space:normal;padding-block:.35rem}
+ .hero-appui[data-astro-cid-j7pv25f6]{margin-top:var(--space-md);font-size:.82rem;
+  gap:var(--space-sm) var(--space-md)}
+}
+/* La regle pleine largeur ne doit plus s'appliquer au hero : elle reste utile
+   partout ailleurs, on ne la supprime donc pas, on l'annule ici seulement. */
+@media(max-width:420px){
+ .hero[data-astro-cid-j7pv25f6] .cta[data-astro-cid-j7pv25f6] .btn[data-astro-cid-j7pv25f6]{width:auto}
+}
+
+
+/* ─── « Le constat » : les deux liens de pied sur une seule ligne ───────────
+   « Notre solution ↓ » et « Parlons de votre besoin → » passaient a la ligne
+   faute de place. Reduits, ils tiennent cote a cote. */
+@media(max-width:860px){
+ .constat-liens[data-astro-cid-j7pv25f6]{flex-wrap:nowrap;gap:.7rem;align-items:center}
+ .constat-liens[data-astro-cid-j7pv25f6] .btn[data-astro-cid-j7pv25f6]{width:auto;flex:0 1 auto;
+  font-size:.82rem;padding:.72rem .9rem;white-space:nowrap}
+ .constat-liens[data-astro-cid-j7pv25f6] .lien-appui[data-astro-cid-j7pv25f6]{font-size:.78rem;
+  line-height:1.25;white-space:normal;padding-block:.35rem}
+}
+
+
+/* ═══ Deuxieme reprise mobile — 21/09/2026 ══════════════════════════════════ */
+
+
+
+/* ─── Accueil sur ordinateur : le bandeau des partenaires au bas du premier ecran ───
+   V3, 05/10/2026. Sur l'ecran de reference (1920 x 950), le hero mesure 52rem et le
+   bandeau des partenaires se lit en bas du premier ecran. Une fenetre de portable est
+   un peu moins haute pour sa largeur : le plafond a 92svh prenait le relais et le
+   bandeau passait sous la ligne de flottaison. Le hero laisse donc toujours la place
+   de l'entete (4,45rem au plus) et du bandeau (2,77rem au plus). A 1920 x 950,
+   52rem reste le plus petit des deux : rien n'y change. */
+@media (min-width:1081px){
+ .hero[data-astro-cid-j7pv25f6]{min-height:min(52rem,calc(100svh - 7.25rem))}
+}

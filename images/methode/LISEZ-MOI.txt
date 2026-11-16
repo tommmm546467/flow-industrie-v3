@@ -1,0 +1,102 @@
+Images des cinq cases de « Notre methode »
+==========================================
+
+Ces cases sont partagees par trois pages : La technologie, Notre Solution et
+L'unite sur votre site. Une seule image sert les trois.
+
+Les cinq fichiers attendus, aux noms exacts :
+
+  methode-1-comprendre.jpg      deux chimistes devant une paillasse
+  methode-2-developper.jpg      reglage d'un module de reaction en flux
+  methode-3-valider.jpg         controle qualite, flacon d'echantillon
+  methode-4-industrialiser.jpg  l'unite modulaire dans le hall
+  methode-5-produire.jpg        les bidons en sortie de ligne
+
+Format : paysage, 16/10, 760 px de large au minimum.
+
+Tant qu'un fichier manque, la case affiche le glyphe de l'etape. Deposer le .jpg
+ici suffit a le remplacer : aucune modification du code n'est necessaire.
+
+Pour alleger une image avant mise en ligne, comme pour « Notre solution » :
+  sips -Z 900 --setProperty formatOptions 82 <original> --out <fichier ici>
+
+--------------------------------------------------------------------------------
+LES PROMPTS
+
+Un bloc de style commun, a coller en tete de chaque prompt, pour que les cinq
+images forment une serie et s'accordent aux trois images de « Notre solution » :
+
+  STYLE — Photographie industrielle realiste, cadrage paysage 16:10. Lumiere
+  naturelle et douce, venant d'une grande baie laterale. Palette froide et
+  desaturee : inox, gris, bleu petrole, quelques touches de vert. Profondeur de
+  champ courte, mise au point sur le sujet. Site industriel francais, propre et
+  recent. Aucun texte, aucune etiquette lisible, aucun logo, aucun filigrane.
+  Aucun visage au premier plan reconnaissable.
+
+01 — COMPRENDRE
+  Deux chimistes en blouse blanche et lunettes de protection, de trois quarts
+  dos, penches sur une paillasse de laboratoire. Entre eux, une feuille imprimee
+  couverte de formules developpees et un ecran affichant une courbe d'analyse.
+  Verrerie de laboratoire propre a l'arriere-plan, floue. L'attention est sur le
+  geste de lecture, pas sur une manipulation.
+
+02 — DEVELOPPER
+  Gros plan sur les mains gantees d'un operateur reglant une vanne en inox sur
+  un module de reaction en flux continu. Autour, des tubes fins et transparents
+  ou circule un liquide clair, des raccords en inox et un petit manometre. Le
+  reste du module est flou. Meme machine que l'image « Produire » de la section
+  « Notre solution » : inox brosse, montage sur chassis.
+
+03 — VALIDER
+  Un flacon d'echantillon en verre ambre, bouche, pose sur une paillasse claire,
+  au premier plan et net. Derriere, flou, un appareil d'analyse de laboratoire
+  avec un ecran allume et une main gantee qui s'en approche. Rien d'ecrit ne
+  doit etre lisible sur l'ecran ni sur le flacon.
+
+04 — INDUSTRIALISER
+  Plan large, legerement en contre-plongee, d'une unite de production chimique
+  modulaire en flux continu : caissons vitres, instrumentation, pupitre de
+  commande, le tout monte sur un chassis a roulettes, au centre d'un hall
+  industriel vide et propre au sol lisse. Personne dans le cadre, ou une
+  silhouette lointaine et floue pour l'echelle.
+
+05 — PRODUIRE
+  Une rangee de bidons chimiques industriels en plastique bleu, fermes et sans
+  etiquette lisible, sur une palette en sortie de ligne de production. A
+  l'arriere-plan flou, l'unite en inox. Memes bidons que les images
+  « Produire » et « Livrer » de la section « Notre solution », pour que le
+  parcours reste lisible d'une page a l'autre.
+
+--------------------------------------------------------------------------------
+D'OU ELLES VIENNENT
+
+Deposees par Tom dans :
+  02-Contenus fournis/05-Divers/Gemini_Generated_Image_*.jpeg
+
+Les originaux y restent intacts, conformement a la regle du dossier. Les
+fichiers presents ici en sont des copies allegees pour le web : 1408 px ramenes
+a 900, qualite 82, soit 107 a 139 Ko au lieu de 594 a 822.
+
+Correspondance, telle que Tom l'a fixee le 14/09/2026 :
+  jdl10w... -> methode-1-comprendre.jpg      la reunion, bureau parisien
+  ymdf6g... -> methode-2-developper.jpg      les deux chimistes et la feuille
+  jgsian... -> methode-3-valider.jpg         la reunion, bureau vitre
+  4yg9lz... -> methode-4-industrialiser.jpg  les mains gantees sur le raccord
+  6yi4vj... -> methode-5-produire.jpg        l'ecran de commande, debit de flux
+
+--------------------------------------------------------------------------------
+A VERIFIER AVANT MISE EN LIGNE
+
+Les memes reserves que pour « Notre solution » s'appliquent :
+
+  - verifier qu'aucune marque ou filigrane de generation n'est incrustee ;
+  - s'assurer que l'usage commercial d'images generees convient au client, et
+    que Marion en est informee ;
+  - se rappeler qu'elles montrent des scenes qui n'ont pas eu lieu. Sur un site
+    qui vend la tracabilite, c'est un choix a assumer explicitement.
+
+  - le tableau blanc de l'image 1 porte « HPLC analyse cinetiques », accord
+    fautif. Illisible a la taille d'affichage des cases, mais present dans le
+    fichier : a refaire si une version pleine largeur est prevue un jour.
+  - l'ecran de l'image 1 porte « Strategie de Croissance - T3 », illisible a la
+    taille d'affichage mais present dans le fichier.

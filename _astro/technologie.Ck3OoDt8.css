@@ -1,0 +1,184 @@
+.marche[data-astro-cid-tbycxezx]{margin-top:2.75rem;padding-block:var(--space-lg);scroll-margin-top:var(--h-entete);--pas-bento: 95ms;--dur-pose: .95s;--dur-prise: .3s;--dur-relache: .58s;--ease-souple: cubic-bezier(.32, .72, 0, 1)}.surtitre[data-astro-cid-tbycxezx]{font-family:var(--font-display);font-size:.76rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--color-petrol)}.tete[data-astro-cid-tbycxezx]{margin-top:var(--space-sm);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:var(--space-xl);align-items:start}.tete[data-astro-cid-tbycxezx] h2[data-astro-cid-tbycxezx]{font-size:var(--text-h2);color:var(--color-petrol-deep);max-width:20ch}.tete[data-astro-cid-tbycxezx] p[data-astro-cid-tbycxezx]{color:var(--color-ink-2);max-width:60ch;font-size:1.06rem}.bento[data-astro-cid-tbycxezx]{margin-top:var(--space-lg);display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--space-md)}.tuile[data-astro-cid-tbycxezx]{--pad-tuile: 1.5rem;background:var(--color-paper-2);border:var(--rule);border-radius:var(--radius-md);padding:var(--pad-tuile);display:flex;flex-direction:column;gap:var(--space-sm)}html.js-mouvement .bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx],.bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx]{transition:opacity var(--dur-pose) var(--ease-out),translate var(--dur-pose) var(--ease-out),scale var(--dur-pose) var(--ease-out),filter var(--dur-pose) var(--ease-out),transform var(--dur-relache) var(--ease-souple),border-color var(--dur-relache) var(--ease-souple),background-color var(--dur-relache) var(--ease-souple),box-shadow var(--dur-relache) var(--ease-souple);transition-delay:calc(var(--pas-bento) * var(--cran, 0)),calc(var(--pas-bento) * var(--cran, 0)),calc(var(--pas-bento) * var(--cran, 0)),calc(var(--pas-bento) * var(--cran, 0)),0s,0s,0s,0s}html.js-mouvement .bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx]:hover,.bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx]:hover,html.js-mouvement .bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx][data-survol],.bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx][data-survol]{transition-duration:var(--dur-pose),var(--dur-pose),var(--dur-pose),var(--dur-pose),var(--dur-prise),var(--dur-prise),var(--dur-prise),var(--dur-prise)}html.js-mouvement .bento[data-astro-cid-tbycxezx]:not(.vu) .tuile[data-astro-cid-tbycxezx]{translate:0 1.625rem;filter:blur(.3125rem);will-change:translate,scale,opacity,filter}html.js-mouvement .bento[data-astro-cid-tbycxezx].vu .tuile[data-astro-cid-tbycxezx]{filter:blur(0);will-change:auto}.tuile[data-astro-cid-tbycxezx]:hover,.tuile[data-astro-cid-tbycxezx][data-survol]{transform:translateY(-.25rem);border-color:var(--color-teal);background:var(--color-paper);box-shadow:var(--ombre-survol)}.tuile[data-astro-cid-tbycxezx]:hover .puce[data-astro-cid-tbycxezx],.tuile[data-astro-cid-tbycxezx][data-survol] .puce[data-astro-cid-tbycxezx]{background:color-mix(in oklab,var(--color-teal) 48%,transparent);transform:scale(1.06)}.tuile[data-astro-cid-tbycxezx]:hover .puce[data-astro-cid-tbycxezx] svg[data-astro-cid-tbycxezx],.tuile[data-astro-cid-tbycxezx]:hover .hexa[data-astro-cid-tbycxezx] svg[data-astro-cid-tbycxezx],.tuile[data-astro-cid-tbycxezx][data-survol] .puce[data-astro-cid-tbycxezx] svg[data-astro-cid-tbycxezx],.tuile[data-astro-cid-tbycxezx][data-survol] .hexa[data-astro-cid-tbycxezx] svg[data-astro-cid-tbycxezx]{transform:scale(1.12)}.puce[data-astro-cid-tbycxezx] svg[data-astro-cid-tbycxezx],.hexa[data-astro-cid-tbycxezx] svg[data-astro-cid-tbycxezx]{transition:transform var(--dur-relache) var(--ease-souple)}.tuile[data-astro-cid-tbycxezx]:hover .puce[data-astro-cid-tbycxezx] svg[data-astro-cid-tbycxezx],.tuile[data-astro-cid-tbycxezx]:hover .hexa[data-astro-cid-tbycxezx] svg[data-astro-cid-tbycxezx],.tuile[data-astro-cid-tbycxezx][data-survol] .puce[data-astro-cid-tbycxezx] svg[data-astro-cid-tbycxezx],.tuile[data-astro-cid-tbycxezx][data-survol] .hexa[data-astro-cid-tbycxezx] svg[data-astro-cid-tbycxezx]{transition-duration:var(--dur-prise)}.tuile-schema[data-astro-cid-tbycxezx]:hover,.tuile-schema[data-astro-cid-tbycxezx][data-survol]{background:var(--color-fond-schema)}@media(prefers-reduced-motion:reduce){.bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx],.bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx]:hover,.puce[data-astro-cid-tbycxezx],.puce[data-astro-cid-tbycxezx] svg[data-astro-cid-tbycxezx],.hexa[data-astro-cid-tbycxezx] svg[data-astro-cid-tbycxezx],.lien-tuile[data-astro-cid-tbycxezx] span[data-astro-cid-tbycxezx],.bento[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx][data-survol]{transition:none}.tuile[data-astro-cid-tbycxezx]:hover,.tuile[data-astro-cid-tbycxezx]:hover .puce[data-astro-cid-tbycxezx],.tuile[data-astro-cid-tbycxezx][data-survol],.tuile[data-astro-cid-tbycxezx][data-survol] .puce[data-astro-cid-tbycxezx]{transform:none}.tuile[data-astro-cid-tbycxezx]:hover .puce[data-astro-cid-tbycxezx] svg[data-astro-cid-tbycxezx],.tuile[data-astro-cid-tbycxezx]:hover .hexa[data-astro-cid-tbycxezx] svg[data-astro-cid-tbycxezx],.tuile[data-astro-cid-tbycxezx][data-survol] .puce[data-astro-cid-tbycxezx] svg[data-astro-cid-tbycxezx],.tuile[data-astro-cid-tbycxezx][data-survol] .hexa[data-astro-cid-tbycxezx] svg[data-astro-cid-tbycxezx]{transform:none}.lien-tuile[data-astro-cid-tbycxezx]:hover span[data-astro-cid-tbycxezx],.lien-tuile[data-astro-cid-tbycxezx]:focus-visible span[data-astro-cid-tbycxezx]{transform:none}}.lien-tuile[data-astro-cid-tbycxezx]{font-family:var(--font-display);font-size:.92em;font-weight:600;color:var(--color-petrol)}.lien-tuile[data-astro-cid-tbycxezx]:hover{color:var(--color-accent-ink)}.lien-tuile[data-astro-cid-tbycxezx] span[data-astro-cid-tbycxezx]{display:inline-block;transition:transform var(--dur-relache) var(--ease-souple)}.lien-tuile[data-astro-cid-tbycxezx]:hover span[data-astro-cid-tbycxezx],.lien-tuile[data-astro-cid-tbycxezx]:focus-visible span[data-astro-cid-tbycxezx]{transform:translate(.1875rem);transition-duration:var(--dur-prise)}.lien-tuile[data-astro-cid-tbycxezx][data-sens=bas]:hover span[data-astro-cid-tbycxezx],.lien-tuile[data-astro-cid-tbycxezx][data-sens=bas]:focus-visible span[data-astro-cid-tbycxezx]{transform:translateY(.1875rem)}.corps[data-astro-cid-tbycxezx] h3[data-astro-cid-tbycxezx]{font-size:var(--text-h3);color:var(--color-petrol)}.corps[data-astro-cid-tbycxezx] p[data-astro-cid-tbycxezx]{margin-top:.4rem;font-size:.96rem;line-height:1.5;color:var(--color-ink-2);max-width:44ch}.puce[data-astro-cid-tbycxezx]{flex:none;width:2.25rem;height:2.25rem;border-radius:var(--radius-sm);background:color-mix(in oklab,var(--color-teal) 24%,transparent);color:var(--color-petrol);display:grid;place-items:center;transition:background-color var(--dur-relache) var(--ease-souple),transform var(--dur-relache) var(--ease-souple)}.tuile[data-astro-cid-tbycxezx]:hover .puce[data-astro-cid-tbycxezx],.tuile[data-astro-cid-tbycxezx][data-survol] .puce[data-astro-cid-tbycxezx]{transition-duration:var(--dur-prise)}.tuile[data-astro-cid-tbycxezx]:nth-child(1){--cran: 0}.tuile[data-astro-cid-tbycxezx]:nth-child(2){--cran: 1}.tuile[data-astro-cid-tbycxezx]:nth-child(3){--cran: 2}.tuile[data-astro-cid-tbycxezx]:nth-child(4){--cran: 3}.tuile[data-astro-cid-tbycxezx]:nth-child(5){--cran: 4}.tuile[data-astro-cid-tbycxezx]:nth-child(6){--cran: 5}html.js-mouvement .bento[data-astro-cid-tbycxezx]:not(.vu) .puce[data-astro-cid-tbycxezx],html.js-mouvement .bento[data-astro-cid-tbycxezx]:not(.vu) .hexa[data-astro-cid-tbycxezx]{opacity:0}html.js-mouvement .bento[data-astro-cid-tbycxezx].vu .puce[data-astro-cid-tbycxezx],html.js-mouvement .bento[data-astro-cid-tbycxezx].vu .hexa[data-astro-cid-tbycxezx]{animation:allumage .62s var(--ease-out) calc(var(--pas-bento) * var(--cran, 0) + .24s) both}@keyframes allumage{0%{opacity:0;scale:.72}to{opacity:1;scale:1}}.tuile-schema[data-astro-cid-tbycxezx]{grid-column:span 8;grid-row:span 2;background:var(--color-fond-schema);border-color:color-mix(in oklab,var(--color-on-dark) 16%,transparent);color:var(--color-on-dark);overflow:hidden}.tuile-schema[data-astro-cid-tbycxezx] .corps[data-astro-cid-tbycxezx] h3[data-astro-cid-tbycxezx]{color:#fff}.tuile-schema[data-astro-cid-tbycxezx] .corps[data-astro-cid-tbycxezx] p[data-astro-cid-tbycxezx]{color:var(--color-on-dark-2);max-width:56ch}.tuile-schema[data-astro-cid-tbycxezx] .puce[data-astro-cid-tbycxezx]{background:color-mix(in oklab,var(--color-teal) 30%,transparent);color:var(--color-on-dark)}.tuile-schema[data-astro-cid-tbycxezx] figure[data-astro-cid-tbycxezx]{margin:auto calc(var(--pad-tuile) * -1) calc(var(--pad-tuile) * -1);width:calc(100% + var(--pad-tuile) * 2)}.tuile-schema[data-astro-cid-tbycxezx] img[data-astro-cid-tbycxezx]{display:block;width:100%;height:auto;max-height:12.5rem;object-fit:contain}@supports (view-timeline-name: --t){@media(prefers-reduced-motion:no-preference){.tuile-schema[data-astro-cid-tbycxezx]{view-timeline-name:--carton-schema}.tuile-schema[data-astro-cid-tbycxezx] img[data-astro-cid-tbycxezx]{animation-name:respiration;animation-duration:auto;animation-timing-function:linear;animation-fill-mode:both;animation-timeline:--carton-schema}}}@keyframes respiration{0%{transform:scale(1)}to{transform:scale(1.04)}}.tuile-a[data-astro-cid-tbycxezx],.tuile-b[data-astro-cid-tbycxezx],.tuile-c[data-astro-cid-tbycxezx],.tuile-spec[data-astro-cid-tbycxezx]{grid-column:span 4}.tuile-a[data-astro-cid-tbycxezx],.tuile-b[data-astro-cid-tbycxezx]{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:center;column-gap:var(--space-md);row-gap:var(--space-sm)}.tuile-a[data-astro-cid-tbycxezx] .corps[data-astro-cid-tbycxezx],.tuile-b[data-astro-cid-tbycxezx] .corps[data-astro-cid-tbycxezx]{display:contents}.tuile-a[data-astro-cid-tbycxezx] .corps[data-astro-cid-tbycxezx] p[data-astro-cid-tbycxezx],.tuile-b[data-astro-cid-tbycxezx] .corps[data-astro-cid-tbycxezx] p[data-astro-cid-tbycxezx]{grid-column:1 / -1;margin-top:0;max-width:44ch}.tuile-c[data-astro-cid-tbycxezx]{flex-direction:row;align-items:flex-start;gap:var(--space-md)}.conclusion[data-astro-cid-tbycxezx]{font-family:var(--font-display);font-size:1.15rem;font-weight:600;line-height:1.3;letter-spacing:-.01em;color:var(--color-petrol-deep);max-width:22ch}.tuile-c[data-astro-cid-tbycxezx] .lien-tuile[data-astro-cid-tbycxezx]{font-size:.78em;letter-spacing:normal;display:block;width:fit-content;margin-top:var(--space-md);line-height:1.45;white-space:nowrap}.tuile-spec[data-astro-cid-tbycxezx]{flex-direction:row;align-items:flex-start;gap:var(--space-md)}.hexa[data-astro-cid-tbycxezx]{flex:none;width:2.75rem;height:2.75rem}.libelle[data-astro-cid-tbycxezx]{font-family:var(--font-display);font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--color-petrol-deep)}.tuile-spec[data-astro-cid-tbycxezx] ul[data-astro-cid-tbycxezx]{margin-top:var(--space-xs);display:grid;gap:.3rem;list-style:none}.tuile-spec[data-astro-cid-tbycxezx] li[data-astro-cid-tbycxezx]{position:relative;padding-left:1.05rem;font-size:.93rem;line-height:1.4;color:var(--color-ink-2)}.tuile-spec[data-astro-cid-tbycxezx] li[data-astro-cid-tbycxezx]:before{content:"";position:absolute;left:.05rem;top:.55em;width:.3125rem;height:.3125rem;background:var(--color-teal);transform:rotate(45deg)}@media(max-width:1080px){.tete[data-astro-cid-tbycxezx]{grid-template-columns:minmax(0,1fr);gap:var(--space-md)}.tete[data-astro-cid-tbycxezx] h2[data-astro-cid-tbycxezx]{max-width:26ch}.tuile-schema[data-astro-cid-tbycxezx]{grid-column:span 12;grid-row:auto}.tuile-schema[data-astro-cid-tbycxezx] img[data-astro-cid-tbycxezx]{max-height:none}.tuile-a[data-astro-cid-tbycxezx],.tuile-b[data-astro-cid-tbycxezx],.tuile-spec[data-astro-cid-tbycxezx]{grid-column:span 6}.tuile-c[data-astro-cid-tbycxezx]{grid-column:span 12;flex-direction:row;align-items:center;gap:var(--space-lg)}.conclusion[data-astro-cid-tbycxezx]{max-width:none}}@media(max-width:840px){.marche[data-astro-cid-tbycxezx]{margin-top:0}}@media(max-width:680px){.tuile-a[data-astro-cid-tbycxezx],.tuile-b[data-astro-cid-tbycxezx],.tuile-c[data-astro-cid-tbycxezx],.tuile-spec[data-astro-cid-tbycxezx]{grid-column:span 12}.tuile-c[data-astro-cid-tbycxezx]{flex-direction:column;align-items:stretch;gap:var(--space-md)}}
+
+
+/* ——— « Le fonctionnement » : six cases, une seule grammaire ———
+   La section melait deux systemes : glyphes au trait de 22px dans les tuiles de
+   texte, hexagones pleins de 48px dans celles de specifications. Tout passe par
+   le cadre commun. Les selecteurs portent deux fois le scope : les regles
+   d'origine des tuiles sont plus specifiques qu'une simple classe. */
+.marche[data-astro-cid-tbycxezx] .marche-chapo{max-width:none;margin:var(--space-md) 0 0;
+ font-size:var(--text-body);line-height:1.6;color:var(--color-ink-2)}
+.marche[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] .icone-bloc{margin-bottom:var(--space-sm)}
+.marche[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] h3,.marche[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] .libelle{
+ font-family:var(--font-display);font-size:var(--text-h3);font-weight:600;
+ line-height:1.3;margin:0 0 .45rem;text-transform:none;letter-spacing:normal}
+.marche[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] p:not(.libelle),
+.marche[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] li,
+.marche[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] .conclusion{font-size:.98rem;line-height:1.55}
+.marche[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] ul{margin:0;padding-left:1.1rem}
+.marche[data-astro-cid-tbycxezx] .tuile[data-astro-cid-tbycxezx] li{margin-top:.3rem}
+
+/* Section « Nos partenaires », reprise de l'accueil avec son scope d'origine. */
+@media(max-width:840px){
+.partenaires[data-astro-cid-bcjkuurq]{background:#fff;border-block:var(--rule)}
+.partenaires[data-astro-cid-bcjkuurq]{padding-block:var(--rythme-demi)}
+.entete[data-astro-cid-bcjkuurq]{text-align:center}
+.entete[data-astro-cid-bcjkuurq] h2[data-astro-cid-bcjkuurq]{font-family:var(--font-display);font-size:.76rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--color-petrol)}
+.entete[data-astro-cid-bcjkuurq] p[data-astro-cid-bcjkuurq]{margin-top:var(--space-xs);font-size:.98rem;color:var(--color-ink-2)}
+.piste[data-astro-cid-bcjkuurq]{margin-top:var(--space-md)}
+.grille-logos[data-astro-cid-bcjkuurq]{display:block}
+.logos[data-astro-cid-bcjkuurq]{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(2rem,5vw,4.5rem) clamp(2.5rem,6vw,5.5rem)}
+.logos[data-astro-cid-bcjkuurq] li[data-astro-cid-bcjkuurq]{display:flex;flex:none;flex-direction:column;align-items:center;justify-content:flex-end;gap:.75rem;text-align:center}
+.logos[data-astro-cid-bcjkuurq] img[data-astro-cid-bcjkuurq]{height:calc(3.5rem * var(--echelle, 1));width:auto;max-width:22rem;object-fit:contain}
+}
+@media(max-width:700px){
+.partenaires[data-astro-cid-bcjkuurq]{padding-block:var(--space-lg)}
+.piste[data-astro-cid-bcjkuurq]{-webkit-mask-image:linear-gradient(to right,transparent,#000 2rem,#000 calc(100% - 2rem),transparent);mask-image:linear-gradient(to right,transparent,#000 2rem,#000 calc(100% - 2rem),transparent)}
+.defile[data-astro-cid-bcjkuurq]{--duree: 18s}
+.logos[data-astro-cid-bcjkuurq]{gap:var(--space-lg);padding-inline-end:var(--space-lg)}
+.logos[data-astro-cid-bcjkuurq] img[data-astro-cid-bcjkuurq]{height:calc(2.5rem * var(--echelle, 1));max-width:16rem}
+}
+@media(prefers-reduced-motion:reduce){
+.piste[data-astro-cid-bcjkuurq]{overflow:visible;padding-inline:var(--space-lg);-webkit-mask-image:none;mask-image:none}
+.defile[data-astro-cid-bcjkuurq]{display:block;width:auto;animation:none}
+.logos[data-astro-cid-bcjkuurq]{flex-wrap:wrap;justify-content:center;padding-inline-end:0;gap:var(--space-lg) var(--space-xl)}
+.logos[data-astro-cid-bcjkuurq][aria-hidden=true]{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+.nom-partenaire[data-astro-cid-bcjkuurq]{font-family:var(--font-display);font-size:.78rem;font-weight:600;letter-spacing:.02em;color:var(--color-muted)}
+}
+
+/* Les deux titres tiennent sur une ligne des qu'il y a la largeur pour ; en
+   dessous ils se replient, faute de quoi ils deborderaient de l'ecran. */
+@media (min-width:820px){
+ .marche[data-astro-cid-tbycxezx] .tete[data-astro-cid-tbycxezx] h2{white-space:nowrap;max-width:none;
+  font-size:clamp(1.5rem,3.1vw,2.4rem)}
+}
+/* La section gagne de la hauteur par le bas. */
+.marche[data-astro-cid-tbycxezx]{padding-bottom:var(--space-3xl)}
+
+
+/* ——— « Nos partenaires » : les memes regles que sur l'accueil ———
+   La page ne portait que les variantes sous media query ; les regles de base
+   manquaient, la liste de logos s'affichait donc sans mise en forme. */
+.partenaires[data-astro-cid-bcjkuurq]{background:#fff;border-block:var(--rule)}
+.partenaires[data-astro-cid-bcjkuurq]{padding-block:var(--rythme-demi)}
+.entete[data-astro-cid-bcjkuurq]{text-align:center}
+.entete[data-astro-cid-bcjkuurq] h2[data-astro-cid-bcjkuurq]{font-family:var(--font-display);font-size:.76rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--color-petrol)}
+.entete[data-astro-cid-bcjkuurq] p[data-astro-cid-bcjkuurq]{margin-top:var(--space-xs);font-size:.98rem;color:var(--color-ink-2)}
+.piste[data-astro-cid-bcjkuurq]{margin-top:var(--space-md)}
+.grille-logos[data-astro-cid-bcjkuurq]{display:block}
+.logos[data-astro-cid-bcjkuurq]{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(2rem,5vw,4.5rem) clamp(2.5rem,6vw,5.5rem)}
+.logos[data-astro-cid-bcjkuurq] li[data-astro-cid-bcjkuurq]{display:flex;flex:none;flex-direction:column;align-items:center;justify-content:flex-end;gap:.75rem;text-align:center}
+.logos[data-astro-cid-bcjkuurq] img[data-astro-cid-bcjkuurq]{height:calc(3.5rem * var(--echelle, 1));width:auto;max-width:22rem;object-fit:contain}
+@media(max-width:700px){.partenaires[data-astro-cid-bcjkuurq]{padding-block:var(--space-lg)}}
+@media(max-width:700px){.piste[data-astro-cid-bcjkuurq]{-webkit-mask-image:linear-gradient(to right,transparent,#000 2rem,#000 calc(100% - 2rem),transparent);mask-image:linear-gradient(to right,transparent,#000 2rem,#000 calc(100% - 2rem),transparent)}}
+@media(max-width:700px){.defile[data-astro-cid-bcjkuurq]{--duree: 18s}}
+@media(max-width:700px){.logos[data-astro-cid-bcjkuurq]{gap:var(--space-lg);padding-inline-end:var(--space-lg)}}
+@media(max-width:700px){.logos[data-astro-cid-bcjkuurq] img[data-astro-cid-bcjkuurq]{height:calc(2.5rem * var(--echelle, 1));max-width:16rem}}
+@media(prefers-reduced-motion:reduce){.piste[data-astro-cid-bcjkuurq]{overflow:visible;padding-inline:var(--space-lg);-webkit-mask-image:none;mask-image:none}}
+@media(prefers-reduced-motion:reduce){.defile[data-astro-cid-bcjkuurq]{display:block;width:auto;animation:none}}
+@media(prefers-reduced-motion:reduce){.logos[data-astro-cid-bcjkuurq]{flex-wrap:wrap;justify-content:center;padding-inline-end:0;gap:var(--space-lg) var(--space-xl)}}
+@media(prefers-reduced-motion:reduce){.logos[data-astro-cid-bcjkuurq][aria-hidden=true]{display:none}}
+.nom-partenaire[data-astro-cid-bcjkuurq]{font-family:var(--font-display);font-size:.78rem;font-weight:600;letter-spacing:.02em;color:var(--color-muted)}
+
+/* ——— « Notre methode » : les cases a image de l'accueil ———
+   Le composant vient de la feuille de l'accueil, a l'identique ; s'y ajoutent
+   la rangee de cinq et le rang chiffre qui remplace le filet. */
+.trajet[data-astro-cid-j7pv25f6]{margin-top:var(--space-2xl);list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-lg)}
+.trajet[data-astro-cid-j7pv25f6] li[data-astro-cid-j7pv25f6]{background:var(--color-paper);border:var(--rule);border-radius:var(--radius-md);padding:var(--space-lg);display:grid;gap:var(--space-sm);align-content:start}
+.trajet-filet[data-astro-cid-j7pv25f6]{display:block;width:2.5rem;height:2px;background:var(--color-teal);margin-bottom:var(--space-xs)}
+.trajet-titre[data-astro-cid-j7pv25f6]{font-family:var(--font-display);font-size:1.05rem;font-weight:600;line-height:1.25;color:var(--color-petrol-deep)}
+.trajet-texte[data-astro-cid-j7pv25f6]{font-size:.98rem;line-height:1.55;color:var(--color-ink-2)}
+@media(max-width:900px){.trajet[data-astro-cid-j7pv25f6]{grid-template-columns:minmax(0,1fr)}}
+/* ——— Cases de « Notre solution » : une zone d'image en haut, le texte en bas ———
+   La zone attend une vraie photo ; en l'absence d'images libres de droits, elle
+   porte pour l'instant le glyphe de l'etape, en grand et en retrait. Poser un
+   <img> a l'interieur suffira a la remplacer. */
+.trajet li{padding:0!important;overflow:hidden;grid-template-rows:auto 1fr;gap:0!important;
+ min-height:22rem}
+.trajet-image{display:grid;place-items:center;aspect-ratio:16/10;
+ background:linear-gradient(160deg,var(--color-paper-2),color-mix(in oklab,var(--color-teal) 10%,var(--color-paper-2)));
+ border-bottom:var(--rule);color:color-mix(in oklab,var(--color-teal) 62%,transparent)}
+.trajet-image>img{grid-area:1/1;width:100%;height:100%;object-fit:cover}
+.trajet-image>svg{grid-area:1/1}
+.trajet-image.avec-photo>svg{display:none}
+.trajet-corps{display:grid;align-content:end;gap:var(--space-sm);padding:var(--space-lg)}
+@media (max-width:900px){.trajet li{min-height:0}}
+@media (max-width:900px){.trajet-image{aspect-ratio:21/9}}
+/* ——— « Notre solution » : les trois cases s'alignent ligne a ligne ———
+   Sans cela, des textes de longueurs differentes decalent les titres entre eux :
+   la sous-grille fait partager aux trois cases les memes rangees. */
+.trajet[data-astro-cid-j7pv25f6]{grid-template-rows:auto auto auto 1fr}
+.trajet[data-astro-cid-j7pv25f6] li{grid-row:span 4;grid-template-rows:subgrid;align-content:stretch}
+.trajet-corps[data-astro-cid-j7pv25f6]{display:grid;grid-row:span 3;grid-template-rows:subgrid;
+ align-content:start;gap:var(--space-sm);padding:var(--space-lg)}
+@supports not (grid-template-rows:subgrid){.trajet[data-astro-cid-j7pv25f6] li{grid-row:auto}}
+@supports not (grid-template-rows:subgrid){.trajet-corps[data-astro-cid-j7pv25f6]{grid-row:auto;grid-template-rows:auto auto 1fr}}
+
+.trajet-cinq[data-astro-cid-j7pv25f6]{grid-template-columns:repeat(5,minmax(0,1fr))}
+.trajet-rang[data-astro-cid-j7pv25f6]{font-family:var(--font-display);font-size:.78rem;font-weight:700;
+ letter-spacing:.12em;color:var(--color-teal-texte)}
+@media (max-width:1080px){.trajet-cinq[data-astro-cid-j7pv25f6]{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:900px){.trajet-cinq[data-astro-cid-j7pv25f6]{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.trajet-cinq[data-astro-cid-j7pv25f6]{grid-template-columns:minmax(0,1fr)}}
+
+/* ——— « Nos valeurs ajoutees » : le titre a la taille de l'accueil ——— */
+.split-piliers[data-astro-cid-fvbzfwj6] .titre-section[data-astro-cid-fvbzfwj6]{font-size:var(--text-h2);line-height:1.12;
+ letter-spacing:-.01em;max-width:24ch}
+
+
+
+/* ——— Les reperes, repris de l'accueil ———
+   Memes regles, meme composant : la page n'en portait aucune. */
+.reperes[data-astro-cid-kdenjtmw]{border-block:var(--rule);background:var(--color-paper-2)}
+.reperes[data-astro-cid-kdenjtmw] .wrap[data-astro-cid-kdenjtmw]{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;padding-block:var(--rythme-demi)}
+.repere[data-astro-cid-kdenjtmw]{padding-inline:var(--space-lg);border-left:var(--rule)}
+.repere[data-astro-cid-kdenjtmw]:before{transition:transform var(--dur-apparition) var(--ease-out),width var(--dur) var(--ease-out)}
+.repere[data-astro-cid-kdenjtmw]:hover:before{width:3rem}
+.repere[data-astro-cid-kdenjtmw] b[data-astro-cid-kdenjtmw]{transition:color var(--dur) var(--ease-out)}
+.repere[data-astro-cid-kdenjtmw]:hover b[data-astro-cid-kdenjtmw]{color:var(--color-petrol-deep)}
+@media(prefers-reduced-motion:reduce){.repere[data-astro-cid-kdenjtmw]:before,.repere[data-astro-cid-kdenjtmw] b[data-astro-cid-kdenjtmw]{transition:none}}
+.repere[data-astro-cid-kdenjtmw]:first-child{padding-left:0;border-left:0}
+.repere[data-astro-cid-kdenjtmw]:before{content:"";display:block;width:1.75rem;height:2px;background:var(--color-teal);margin-bottom:var(--space-sm)}
+html.js-mouvement .wrap[data-astro-cid-kdenjtmw][data-anim-groupe] .repere[data-astro-cid-kdenjtmw]:before{transform:scaleX(0);transform-origin:left center;transition:transform var(--dur-apparition) var(--ease-out)}
+html.js-mouvement .wrap[data-astro-cid-kdenjtmw][data-anim-groupe].vu .repere[data-astro-cid-kdenjtmw]:before{transform:scaleX(1)}
+html.js-mouvement .wrap[data-astro-cid-kdenjtmw][data-anim-groupe].vu .repere[data-astro-cid-kdenjtmw]:nth-child(2):before{transition-delay:calc(var(--pas-cascade) * 1)}
+html.js-mouvement .wrap[data-astro-cid-kdenjtmw][data-anim-groupe].vu .repere[data-astro-cid-kdenjtmw]:nth-child(3):before{transition-delay:calc(var(--pas-cascade) * 2)}
+.repere[data-astro-cid-kdenjtmw] b[data-astro-cid-kdenjtmw]{display:block;font-family:var(--font-display);font-weight:700;font-size:clamp(1.75rem,2.6vw,2.3rem);line-height:1.05;letter-spacing:-.02em;color:var(--color-petrol);font-variant-numeric:tabular-nums}
+.repere[data-astro-cid-kdenjtmw] span[data-astro-cid-kdenjtmw]{display:block;margin-top:var(--space-sm);font-size:.92rem;line-height:1.5;color:var(--color-ink-2);max-width:44ch}
+@media(max-width:840px){.reperes[data-astro-cid-kdenjtmw] .wrap[data-astro-cid-kdenjtmw]{grid-template-columns:minmax(0,1fr);gap:var(--space-md);padding-block:var(--space-lg)}}
+@media(max-width:840px){.repere[data-astro-cid-kdenjtmw]{padding-inline:0;border-left:0}}
+@media(max-width:840px){.repere[data-astro-cid-kdenjtmw]:not(:first-child){border-top:var(--rule);padding-top:var(--space-md)}}
+@media(max-width:840px){.repere[data-astro-cid-kdenjtmw] span[data-astro-cid-kdenjtmw]{max-width:52ch}}
+
+/* Le drapeau rond, comme dans le surtitre du hero de l'accueil.
+   Le selecteur doit passer devant « .repere span », qui vise tous les spans de
+   la case et les met en bloc : d'ou le chemin complet jusqu'au <b>. */
+.repere[data-astro-cid-kdenjtmw] b[data-astro-cid-kdenjtmw] .drapeau[data-astro-cid-kdenjtmw]{
+ display:inline-grid;place-items:center;width:.72em;height:.72em;margin:0 0 0 .38em;
+ font-size:inherit;max-width:none;line-height:normal;
+ border-radius:50%;overflow:hidden;vertical-align:.02em;
+ box-shadow:0 0 0 1px color-mix(in oklab,var(--color-ink) 18%,transparent)}
+.repere[data-astro-cid-kdenjtmw] b[data-astro-cid-kdenjtmw] .drapeau[data-astro-cid-kdenjtmw] svg[data-astro-cid-kdenjtmw]{
+ width:100%;height:100%;object-fit:cover}
+
+/* Les reperes perdent leur petit filet turquoise. */
+.repere[data-astro-cid-kdenjtmw]:before{display:none}
+
+/* « Le fonctionnement » : les titres des deux tuiles claires prennent la meme
+   couleur que « Conception » et « Performances ». Ils heritaient jusqu'ici de
+   la couleur de texte courante, plus claire que les libelles voisins. */
+.marche[data-astro-cid-tbycxezx] .tuile-a[data-astro-cid-tbycxezx] .corps[data-astro-cid-tbycxezx] h3[data-astro-cid-tbycxezx],
+.marche[data-astro-cid-tbycxezx] .tuile-b[data-astro-cid-tbycxezx] .corps[data-astro-cid-tbycxezx] h3[data-astro-cid-tbycxezx]{
+ color:var(--color-petrol-deep)}
+
+
+/* ─── Les cases du parcours, sur petit ecran — 20/09/2026 ───────────────────
+   Chaque case est une grille d'une colonne implicite, dimensionnee au contenu.
+   L'image porte un aspect-ratio : sa hauteur venant de la rangee, sa largeur
+   s'en deduisait et atteignait 492 px dans une case de 340. Le debordement
+   etant masque (overflow:hidden sur le li), le texte etait tranche en plein
+   mot — « Nous developpons et validons le procede a… molecule. ». Borner la
+   colonne suffit : l'image retrouve sa largeur et l'aspect-ratio sa hauteur. */
+.trajet li{grid-template-columns:minmax(0,1fr)}

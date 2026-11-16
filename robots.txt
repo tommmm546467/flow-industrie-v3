@@ -1,0 +1,7 @@
+# Hebergement TEMPORAIRE de demonstration de Flow Industrie
+# Le site officiel sera sur flowindustrie.com. Cette adresse ne doit pas
+# etre indexee : elle ferait du contenu duplique contre le vrai domaine.
+# Le portier _worker.js ajoute par ailleurs un en-tete X-Robots-Tag: noindex
+# sur chaque reponse, et refuse tout acces sans mot de passe.
+User-agent: *
+Disallow: /

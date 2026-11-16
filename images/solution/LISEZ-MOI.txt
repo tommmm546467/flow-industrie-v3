@@ -1,0 +1,60 @@
+Images des trois cases de « Notre solution » — accueil
+=======================================================
+
+Les trois fichiers attendus, aux noms exacts :
+
+  solution-1-reunion.jpg      trois personnes en reunion autour d'une table
+  solution-2-production.jpg   PLUS UTILISE depuis le 14/09/2026, voir ci-dessous
+  solution-3-chargement.jpg   chargement des bidons dans un camion
+
+--------------------------------------------------------------------------------
+LE BLOC « PRODUIRE » N'UTILISE PLUS solution-2-production.jpg
+
+Decision de Tom le 14/09/2026 : la case « Produire » de l'accueil doit montrer la
+MEME image que la case « Produire » de la page « Notre Solution ». L'accueil
+pointe donc desormais vers :
+
+  images/methode/methode-5-produire.jpg
+
+qui est l'ecran de commande affichant le debit de flux. Les deux pages montrent
+ainsi la meme etape avec le meme visuel.
+
+solution-2-production.jpg reste dans ce dossier mais n'est reference par aucune
+page. A supprimer si l'on fait le menage, ou a reutiliser ailleurs.
+
+Format : paysage, 16/10, 760 px de large au minimum.
+
+Tant qu'un fichier manque, la case affiche le glyphe de l'etape. Deposer le .jpg
+ici suffit a le remplacer : aucune modification du code n'est necessaire.
+
+--------------------------------------------------------------------------------
+D'OU ELLES VIENNENT
+
+Deposees par Tom le 13/09/2026 dans :
+  02-Contenus fournis/05-Divers/Gemini_Generated_Image_*.jpeg
+
+Les originaux y restent intacts, conformement a la regle du dossier. Les fichiers
+presents ici en sont des copies allegees pour le web : 1312 px ramenes a 900,
+qualite 82, soit 100 a 156 Ko au lieu de 649 a 889.
+
+Correspondance :
+  blxs62... -> solution-1-reunion.jpg      la reunion
+  cipku0... -> solution-2-production.jpg   le serpentin de tubes
+  pdj1ro... -> solution-3-chargement.jpg   le camion et la palette de futs
+
+Pour refaire une image : reprendre l'original dans 02-Contenus fournis, puis
+  sips -Z 900 --setProperty formatOptions 82 <original> --out <fichier ici>
+
+--------------------------------------------------------------------------------
+A VERIFIER AVANT MISE EN LIGNE
+
+Ce sont des images generees par intelligence artificielle. Le dossier
+« Images site (essais) » signale deja, comme probleme bloquant, qu'un visuel du
+jeu actuel porte une marque de generation IA. Avant publication :
+
+  - verifier qu'aucune marque ou filigrane de generation n'est incrustee ;
+  - s'assurer que l'usage commercial d'images generees convient au client, et
+    que Marion en est informee ;
+  - se rappeler qu'elles montrent des scenes qui n'ont pas eu lieu : ni ces
+    personnes, ni cette machine, ni cette livraison n'existent. Sur un site qui
+    vend la tracabilite, c'est un choix a assumer explicitement.

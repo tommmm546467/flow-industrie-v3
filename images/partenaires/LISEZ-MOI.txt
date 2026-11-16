@@ -1,0 +1,57 @@
+Logos des partenaires affiches par le composant BandeauPartenaires.astro.
+La liste fait autorite dans site/src/consts.ts (constante PARTENAIRES), qui porte
+aussi le reglage de taille de chaque logo (champ `echelle`).
+
+Etat au 2026-07-30 : les cinq logos sont fournis, tous en couleurs officielles.
+
+  bpifrance.png               OK   carre plein jaune : c'est le logo, pas une marge
+  reseau-entreprendre.png     OK   fond transparent
+  grand-paris-seine-oise.png  OK   mais fond BLANC opaque, voir plus bas
+  taes.png                    OK   fond transparent
+  eltia.png                   OK   logo officiel "Eltia Groupe", rogne et detoure
+
+Format : SVG de preference (un logo est un trace, il est affiche a des tailles
+variables). A defaut, PNG a FOND TRANSPARENT, environ 1000 px de large.
+
+Ne pas deposer ici le fichier du partenaire tel quel : le passer par
+
+  site/scripts/preparer-logo-partenaire.ps1
+
+qui rogne au plus pres de l'encre, met a la taille et detoure le fond blanc. Ajouter
+-dejaDetoure si la source a deja un fond transparent.
+
+Les deux regles que ce script applique, pour memoire :
+  - rogner le fichier au plus pres de l'encre. Le reglage `echelle` de consts.ts
+    porte sur la hauteur du FICHIER : si le fichier garde ses marges d'export, le
+    reglage porte sur le vide autant que sur le logo, et le logo parait plus petit
+    que les autres a reglage egal ;
+  - eviter la version blanche d'un logo, invisible sur le fond du site. Il faut la
+    version foncee ou couleur.
+
+--- ATTENTION AU PLAFOND DE LARGEUR ---
+
+Le composant plafonne la largeur des logos (22 rem, 16 rem en petit ecran). Un logo
+tres allonge qui touche ce plafond est redescendu en hauteur par `object-fit: contain`,
+et son `echelle` n'a alors plus aucun effet. Symptome : on modifie `echelle` dans
+consts.ts et rien ne bouge a l'ecran, le logo restant plus petit que ses voisins.
+C'est arrive a Eltia. Si ca se reproduit avec un nouveau logo, c'est le plafond qu'il
+faut relever, pas `echelle` qu'il faut monter.
+
+--- CE QUI RESTE A OBTENIR ---
+
+Le logo de Grand Paris Seine & Oise est sur fond blanc opaque. C'est la seule raison
+pour laquelle la bande partenaires a un fond blanc pur (#fff) et non le papier legerement
+bleute du reste du site : sur le papier, ce logo apparaissait comme un rectangle blanc
+pose sur la bande. Le jour ou la communaute urbaine fournit un fichier detoure, la bande
+peut revenir a `var(--color-paper-2)` — la ligne concernee est commentee dans
+BandeauPartenaires.astro.
+
+--- DROITS ---
+
+Bpifrance, Reseau Entreprendre et la communaute urbaine ont des chartes d'usage de
+leur marque (proportions, zone de protection, versions autorisees, parfois interdiction
+de reteindre le logo). Utiliser le fichier officiel fourni par chacun — c'est aussi la
+raison pour laquelle le composant n'applique aucun filtre gris aux logos.
+
+La validation de la liste elle-meme est prise en charge par Tom, en direct avec
+Marion (2026-07-30). Ce n'est pas un blocage cote code.
