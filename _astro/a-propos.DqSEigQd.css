@@ -244,9 +244,18 @@ input[data-astro-cid-qtd5vjyj][type=text],input[data-astro-cid-qtd5vjyj][type=em
    composition, au lieu de se serrer contre les bords d'un portable ou de
    flotter au milieu d'un grand ecran. Les feuilles ont ete passees en rem le
    meme jour pour que tout suive.
-   Plancher a 12 px, atteint a 1440 px : en dessous, la lisibilite passe avant
-   la stricte proportion. Plafond a 2560 px de large.
+   Plancher a 16 px, atteint a 1920 px : en dessous, le site reprend sa taille
+   normale au lieu de retrecir. Corrige le 16/11/2026, parce que la regle
+   d'origine descendait a 12 px des 1440 px et rendait le site minuscule sur
+   tous les portables. Plafond a 2560 px de large.
    Sous 1081 px (tablette, telephone), rien ne change : 16 px. */
 @media (min-width:1081px){
- html{font-size:clamp(12px,calc(100vw / 120),21.3333px)}
+ html{font-size:clamp(16px,calc(100vw / 120),21.3333px)}
 }
+
+
+/* Le lien des avertissements de formulaire, pose le 17/11/2026 : il heritait
+   d'une couleur de lien prevue pour le fond clair du site, illisible sur le
+   fond d'alerte. Cette feuille est chargee par les 13 pages, et les
+   avertissements aussi. */
+.avertissement a{color:inherit;text-decoration:underline;text-underline-offset:.15em}

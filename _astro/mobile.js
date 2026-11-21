@@ -43,6 +43,43 @@ function fabriqueRouleau(opts) {
   var nbPages = Math.ceil(vignettes.length / pas);
   if (total) total.textContent = String(nbPages);
 
+  /* Les points, un par page.
+   *
+   * Ils remplacent les fleches sur telephone (16/11/2026, demande de Nathan) :
+   * la fleche est un idiome de souris, le point est celui du pouce, et il dit
+   * en plus ou l'on en est et combien il reste a voir.
+   *
+   * Ils se fabriquent ici et non dans le balisage des cinq pages : le nombre
+   * de pages depend du pas et du nombre de vignettes, et une liste ecrite a la
+   * main mentirait des qu'une vignette est ajoutee ou retiree.
+   *
+   * Ce sont des boutons, pas des pastilles decoratives : retirer les fleches
+   * sans rien mettre a la place supprimerait la seule commande utilisable au
+   * clavier. Ils sont donc aussi un second chemin, comme l'etaient les fleches.
+   */
+  var points = [];
+  var barre = prec.parentNode;
+  if (barre) {
+    var liste = document.createElement('ul');
+    liste.className = 'rouleau-points';
+    for (var i = 0; i < nbPages; i++) {
+      var item = document.createElement('li');
+      var point = document.createElement('button');
+      point.type = 'button';
+      point.className = 'rouleau-point';
+      point.setAttribute('aria-label', opts.libellePoint
+        ? opts.libellePoint(i + 1, nbPages)
+        : 'Aller a la page ' + (i + 1) + ' sur ' + nbPages);
+      point.addEventListener('click', (function (p) {
+        return function () { versPage(p); };
+      })(i));
+      item.appendChild(point);
+      liste.appendChild(item);
+      points.push(point);
+    }
+    barre.appendChild(liste);
+  }
+
   function roulant() {
     return bande.scrollWidth - bande.clientWidth > 4;
   }
@@ -81,6 +118,12 @@ function fabriqueRouleau(opts) {
        et une fleche grisee dirait le contraire. */
     prec.disabled = boucle ? false : p <= 0;
     suiv.disabled = boucle ? false : p >= nbPages - 1;
+    /* `aria-current` plutot qu'une classe : l'etat est annonce par les lecteurs
+       d'ecran, et la feuille s'y accroche sans qu'on ait deux sources. */
+    for (var i = 0; i < points.length; i++) {
+      if (i === p) points[i].setAttribute('aria-current', 'true');
+      else points[i].removeAttribute('aria-current');
+    }
   }
 
   prec.addEventListener('click', function () { versPage(pageCourante() - 1); });
@@ -108,6 +151,7 @@ fabriqueRouleau({
   prec: '[data-trajet-prec]',
   suiv: '[data-trajet-suiv]',
   rang: '[data-trajet-rang]',
+  libellePoint: function (n, t) { return 'Aller a l\u2019\u00e9tape ' + n + ' sur ' + t; },
   total: '[data-trajet-total]',
   pas: 1,
   /* La boucle se decide dans le balisage, page par page.
@@ -126,6 +170,7 @@ fabriqueRouleau({
   prec: '[data-secteurs-prec]',
   suiv: '[data-secteurs-suiv]',
   rang: '[data-secteurs-rang]',
+  libellePoint: function (n, t) { return 'Aller au groupe de secteurs ' + n + ' sur ' + t; },
   total: '[data-secteurs-total]',
   pas: 4,
   boucle: true
@@ -142,6 +187,7 @@ fabriqueRouleau({
   prec: '[data-partenaires-prec]',
   suiv: '[data-partenaires-suiv]',
   rang: '[data-partenaires-rang]',
+  libellePoint: function (n, t) { return 'Aller au partenaire ' + n + ' sur ' + t; },
   total: '[data-partenaires-total]',
   pas: 1,
   boucle: true
@@ -498,4 +544,46 @@ fabriquePliage({
      la liste des cartes est refaite de ce cote-la aussi. */
   if (etroit.addEventListener) etroit.addEventListener('change', reprendre);
   placer();
+})();
+
+
+/* ───────────────────────────────────────────────────────────────────────────
+ * Les photos des cartes de methode
+ *
+ * Porte ici le 17/11/2026, depuis des attributs `onload` et `onerror` ecrits
+ * dans le balisage des quatre pages. Ces attributs sont du script en ligne :
+ * ils obligeraient la CSP a autoriser `unsafe-hashes`, c'est-a-dire a rouvrir
+ * une partie de ce qu'elle sert a fermer. Le comportement est inchange, il est
+ * seulement attache depuis un fichier.
+ *
+ * Ce que fait ce comportement : la classe `avec-photo` ne se pose que si la
+ * photo arrive vraiment, et l'image se retire si elle manque — la carte garde
+ * alors sa mise en page, sans cadre vide ni icone d'image cassee.
+ *
+ * Le cas de l'image DEJA chargee est traite a part, et ce n'est pas un detail :
+ * `mobile.js` est charge en `defer`, donc il tourne apres l'analyse du
+ * document. Une image en cache est alors deja `complete`, son evenement `load`
+ * est passe, et l'attendre ne donnerait jamais rien : la photo resterait sans
+ * sa classe a chaque visite apres la premiere. `naturalWidth` departage une
+ * image arrivee d'une image en echec, les deux etant `complete`.
+ */
+(function () {
+  var photos = document.querySelectorAll('img[data-photo-methode]');
+  for (var i = 0; i < photos.length; i++) {
+    (function (img) {
+      function poser() {
+        var cadre = img.closest('.trajet-image');
+        if (cadre) cadre.classList.add('avec-photo');
+      }
+      function retirer() {
+        if (img.parentNode) img.parentNode.removeChild(img);
+      }
+      if (img.complete) {
+        if (img.naturalWidth > 0) poser(); else retirer();
+        return;
+      }
+      img.addEventListener('load', poser, { once: true });
+      img.addEventListener('error', retirer, { once: true });
+    })(photos[i]);
+  }
 })();

@@ -882,3 +882,132 @@
  .plan-du-site h1{                   /* Plan du site */
   font-size:var(--text-display-s)}
 }
+
+
+/* ═══ Passe du 16/11/2026 : des points a la place des fleches ══════════════
+
+   Demande de Nathan, pour tous les rouleaux du site, sur telephone seulement.
+   La fleche est un idiome de souris. Au pouce on fait glisser : ce qui manque
+   n'est pas un bouton pour avancer, c'est de savoir qu'il y a une suite et ou
+   l'on en est. Les points disent les deux, et le point allonge montre de quel
+   cote la bande continue.
+
+   Les points prennent la place exacte du compteur « 1 / 2 », sous la bande,
+   dans la gouttiere que les trois rouleaux reservaient deja. Le compteur n'est
+   pas supprime : il porte `aria-live` et reste annonce aux lecteurs d'ecran. Il
+   cesse seulement d'etre affiche, puisque les points disent la meme chose a
+   l'oeil. Deux ecritures du meme etat cote a cote seraient une redite.
+
+   Rien de tout ceci n'atteint l'ordinateur. Les trois barres de commandes sont
+   `display:none` par defaut et ne passent a `display:contents` que dans les
+   requetes de media ci-dessous : les fleches n'ont jamais ete visibles au-dela
+   de 900 px. Le lot est donc sans effet sur la version bureau, par
+   construction et non par precaution. */
+
+.rouleau-points{display:flex;align-items:center;justify-content:center;
+ gap:0;list-style:none;margin:0;padding:0}
+
+/* La cible tactile fait 28 x 44 px, le point visible 7 px. Le confort du pouce
+   ne se paie pas par une rangee de grosses pastilles : c'est la zone cliquable
+   qui est large, pas le dessin. */
+.rouleau-point{display:block;position:relative;
+ width:1.75rem;height:2.75rem;margin:0;padding:0;border:0;
+ background:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.rouleau-point::before{content:"";position:absolute;top:50%;left:50%;
+ width:.4375rem;height:.4375rem;border-radius:62.4375rem;translate:-50% -50%;
+ background:color-mix(in oklab,var(--color-ink) 26%,transparent);
+ transition:background-color var(--dur) var(--ease-out),
+            width var(--dur) var(--ease-out)}
+.rouleau-point[aria-current="true"]::before{width:1.125rem;
+ background:var(--color-teal)}
+/* Le contour de focus se pose sur le point dessine, pas sur la cible
+   transparente : un rectangle de 28 x 44 px autour d'un point de 7 px
+   designerait du vide. */
+.rouleau-point:focus-visible{outline:none}
+.rouleau-point:focus-visible::before{outline:2px solid var(--color-teal);
+ outline-offset:3px}
+@media (prefers-reduced-motion:reduce){
+ .rouleau-point::before{transition:none}
+}
+
+/* Les trois etapes et les partenaires : meme seuil que leurs fleches. */
+@media(max-width:900px){
+ .trajet-rouleau[data-actif] .trajet-fleche,
+ .partenaires-rouleau[data-actif] .rouleau-fleche{display:none}
+ .trajet-rouleau[data-actif] .rouleau-rang,
+ .partenaires-rouleau[data-actif] .rouleau-rang{position:absolute;
+  width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ .trajet-rouleau[data-actif],
+ .partenaires-rouleau[data-actif]{padding-bottom:3rem}
+ .trajet-rouleau[data-actif] .rouleau-points,
+ .partenaires-rouleau[data-actif] .rouleau-points{position:absolute;bottom:0;
+  left:50%;translate:-50% 0}
+}
+
+/* Les secteurs : leur rouleau ne s'ouvre qu'a 760 px, leurs points aussi. */
+@media(max-width:760px){
+ .secteurs-rouleau[data-actif] .rouleau-fleche{display:none}
+ .secteurs-rouleau[data-actif] .rouleau-rang{position:absolute;
+  width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ .secteurs-rouleau[data-actif]{padding-bottom:3rem}
+ .secteurs-rouleau[data-actif] .rouleau-points{position:absolute;bottom:0;
+  left:50%;translate:-50% 0}
+}
+
+
+/* ─── « Nos valeurs ajoutees » : de l'air au-dessus du surtitre ────────────
+
+   Releve du 16/11/2026, sur les quatre pages a surtitre : partout le surtitre
+   d'une section se pose a 76 px du haut, par `.wrap{padding-block:
+   var(--rythme-demi)}`. Dans les trois sections « Nos valeurs ajoutees », le
+   `.wrap` est AUSSI le bloc epingle `.ecran`, dont le rembourrage est ramene a
+   .2rem pour que le bloc tienne dans la hauteur libre. Le surtitre tombait
+   donc a 3 px du bord, colle a la fin de la section precedente.
+
+   La reserve se prend sur la SECTION, jamais sur `.ecran` : `mobile.js` mesure
+   `--h-ecran` a partir du rembourrage de `.ecran`, et l'y remettre ferait
+   grandir le bloc de 76 px, donc l'empecherait de s'epingler. C'est exactement
+   le defaut que la passe du 21/09 avait corrige, et il ne faut pas le rouvrir
+   pour une question de marge.
+
+   Les trois pages portent des marqueurs de composant differents (`j7pv25f6`,
+   `fvbzfwj6`, `t6vnkbpi`) : on vise la classe seule, qui leur est commune. */
+@media(max-width:900px){
+ .split-piliers{padding-top:var(--rythme-demi)}
+}
+
+
+/* ─── Les tuiles de secteurs : dire qu'elles se retournent ─────────────────
+
+   Le retournement au tapotement existe deja : le script en ligne de la page
+   tient un petit automate (survol, focus, verrou) et n'ecarte que la souris et
+   le clavier sur le clic. Un appui tactile passe. Mesure du 16/11/2026 :
+   `data-retourne` se pose bien, et `.plateau` prend `rotateY(180deg)`.
+
+   Ce qui manquait n'est donc pas le comportement, c'est l'indice. Sur grand
+   ecran on decouvre le dos en passant la souris, sans rien demander. Au doigt,
+   rien ne dit qu'il y a un dos : on voit huit images legendees et on passe.
+
+   D'ou cette pastille, posee seulement la ou le survol n'existe pas, et
+   seulement quand le script pilote la grille : sans lui, la tuile n'a pas de
+   dos a montrer, elle deroule sa liste sous l'image, et promettre un
+   retournement serait mentir.
+
+   `(hover: none)` plutot qu'une largeur : ce n'est pas la taille de l'ecran
+   qui prive du survol, c'est le moyen de pointage. Une tablette large au doigt
+   a le meme besoin qu'un telephone. */
+@media (hover: none){
+ [data-grille-secteurs][data-pilotage] .tuile .face-avant::before{
+  content:"";position:absolute;z-index:2;top:.4rem;right:.4rem;
+  width:1.5rem;height:1.5rem;border-radius:62.4375rem;
+  background-color:color-mix(in oklab,var(--color-petrol-deep) 62%,transparent);
+  -webkit-backdrop-filter:blur(.25rem);backdrop-filter:blur(.25rem);
+  /* Le « plus » est dessine par deux filets, pour ne pas charger la page d'une
+     icone de 24 octets ni d'un caractere qui dependrait de la police. */
+  background-image:linear-gradient(var(--color-on-dark),var(--color-on-dark)),
+                   linear-gradient(var(--color-on-dark),var(--color-on-dark));
+  background-size:.625rem 2px,2px .625rem;
+  background-position:center,center;
+  background-repeat:no-repeat;
+  box-shadow:0 1px .25rem oklch(29% .06 248 / .25)}
+}

@@ -1,0 +1,14 @@
+# En-tetes de securite du site Flow Industrie.
+# FICHIER GENERE. Ne pas modifier a la main : relancer
+#   node "controles/genere_entetes.mjs"
+# depuis 02-Versions/V3 - en cours. La CSP porte un hachage par script en
+# ligne (73 scripts, 19 hachages distincts) : toute
+# retouche d'une page change ces hachages.
+/*
+  Content-Security-Policy: default-src 'self'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'self' https://api.web3forms.com; connect-src 'self' https://api.web3forms.com; img-src 'self'; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-/bUzZWGlaTJ5mTK3IFdbRF4ob/Bxefwc3qbxMcTCwrQ=' 'sha256-4paYEEMo6E5LwDZCxPFhq/kne9IGlo/RC7eS4zdFMT4=' 'sha256-DajYMOsf9xuQ18/fhbhoU97FxIJigRNLJNfGbOc4DWU=' 'sha256-H/h23YL2979zcx0wUePQkxsVmetAAcgodoPHVkImszE=' 'sha256-I97PnIomfC+WstzZJumY0wVxm04XzrtNLKtuOYne1zY=' 'sha256-LL9l0ueG0F3NUVxhyoDO06aJ8BiI04aM04B5NuvcxDw=' 'sha256-N+XO8Cx05UwPxOwJboXyIai/KnD3xPkzActjR3sI6TA=' 'sha256-TBx7U053A56zU0WbflYXpEfaOUDmyZK5Fxl/qmpCxHU=' 'sha256-UB8/CEtJqXLIvucd1Bsl+2giv1SDS6WNuO7UwfCBL9g=' 'sha256-Vp6tUCsGJFsCvmv37BR/GHjXhUy2cRkbjdyR55LFR7Q=' 'sha256-b5ftziUCKrDlBRN6EldqlX7mmaIEawG89W7tQRPm/jM=' 'sha256-c9J1X8F/mkfIfmQxTYSgrDHBRIS06fiOVZIiEiQZays=' 'sha256-cMCBGO9ZtCgp/buhvRheU1u1rU/do/Z2P78fL+Pmq6g=' 'sha256-fN0GM3G/60S3aHgWo0wPI5bom0W0zzrAw1me9D6MLys=' 'sha256-itCo2jN4TXmz/xiOQn1lkD+zMJF+u+Xpr9ZeIJZaQjA=' 'sha256-rrO8Kvm+mIh16I4ud6QZDFzvb3/Hfnr+AtxZUvzEA/4=' 'sha256-y+EBpAvx02KvMCL3Zi89Qyx3bUgWOxoID8XGIxhP2bo=' 'sha256-ybC6RcO+wU0SEGZW7ooO19DA/IfetVuZLMX1KiuNUE0=' 'sha256-ygJ+NXpnPLtviD/JRwlyO1BFIzMTz5AMM1l/DjEfplY='; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Cross-Origin-Opener-Policy: same-origin
+  Permissions-Policy: accelerometer=(), camera=(), display-capture=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()

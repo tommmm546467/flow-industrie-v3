@@ -1,0 +1,21 @@
+Les polices du site, servies depuis le site.
+
+Installees le 17/11/2026. Avant cette date, les 13 pages les chargeaient depuis
+fonts.googleapis.com puis fonts.gstatic.com : chaque visite envoyait l'adresse
+IP du visiteur a un tiers hors de l'Union europeenne, sans consentement et
+avant toute interaction. C'est le motif du « ne pas publier en l'etat » de
+l'audit interne.
+
+Les fichiers sont ceux de Google, inchanges. Les deux familles sont sous
+licence SIL Open Font (OFL 1.1), qui autorise expressement la redistribution et
+l'hebergement par un tiers. Les textes de licence sont a cote.
+
+  Space Grotesk   Florian Karsten          LICENCE-space-grotesk.txt
+  Source Serif 4  Adobe                    LICENCE-source-serif.txt
+
+Seuls les sous-ensembles latin et latin-ext sont repris : le site est en
+francais. Les declarations `unicode-range` d'origine sont conservees, le
+navigateur ne telecharge donc que les fichiers dont la page a besoin.
+
+Pour les regenerer : scratchpad/rapatrie_polices.py, ou la demande d'origine
+conservee en tete de ce script.
