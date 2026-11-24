@@ -33,7 +33,7 @@
   panneau.addEventListener('close', function () { if (declencheur) declencheur.focus(); });
 })();
 
-/* Tracage de la source du lead — sans cookie, sans traceur tiers. */
+/* Tracage de la source du lead, sans cookie, sans traceur tiers. */
 (function () {
   var p = new URLSearchParams(location.search);
   var mettre = function (id, v) { var c = document.getElementById(id); if (c) c.value = v || ''; };
@@ -45,7 +45,8 @@
 })();
 
 /* Envoi en arriere-plan, pour que le remerciement s'affiche dans le panneau.
-   Repris tel quel du formulaire de /contact/ : meme appel, memes garde-fous. */
+   Repris tel quel du formulaire de /contact/ : meme appel, memes garde-fous.
+   Le traitement est celui de l'hebergement, dans /envoi/ : aucun prestataire tiers. */
 (function () {
   var form = document.getElementById('pan-formulaire-contact');
   var merci = document.getElementById('pan-remerciement');
@@ -59,15 +60,14 @@
     erreur.hidden = true;
     bouton.disabled = true;
     bouton.textContent = 'Envoi en cours…';
-    /* `redirect` est retire de la charge utile : laisse dedans, l'API repond par une
-       redirection que fetch suit en silence — on croirait l'envoi perdu. */
-    var donnees = Object.fromEntries(new FormData(form));
-    delete donnees.redirect;
+    /* Le formulaire part tel quel. L'en-tete Accept demande une reponse en JSON :
+       sans lui le serveur renverrait sur la page de remerciement : le panneau
+       disparaitrait au lieu d'afficher le merci a sa place. */
     try {
-      var reponse = await fetch('https://api.web3forms.com/submit', {
+      var reponse = await fetch('/envoi/contact.php', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(donnees),
+        headers: { Accept: 'application/json' },
+        body: new FormData(form),
       });
       var resultat = await reponse.json();
       if (!resultat.success) throw new Error(resultat.message || 'envoi refusé');

@@ -26,41 +26,41 @@ LES PROMPTS
 Un bloc de style commun, a coller en tete de chaque prompt, pour que les cinq
 images forment une serie et s'accordent aux trois images de « Notre solution » :
 
-  STYLE — Photographie industrielle realiste, cadrage paysage 16:10. Lumiere
+  STYLE : Photographie industrielle realiste, cadrage paysage 16:10. Lumiere
   naturelle et douce, venant d'une grande baie laterale. Palette froide et
   desaturee : inox, gris, bleu petrole, quelques touches de vert. Profondeur de
   champ courte, mise au point sur le sujet. Site industriel francais, propre et
   recent. Aucun texte, aucune etiquette lisible, aucun logo, aucun filigrane.
   Aucun visage au premier plan reconnaissable.
 
-01 — COMPRENDRE
+01. COMPRENDRE
   Deux chimistes en blouse blanche et lunettes de protection, de trois quarts
   dos, penches sur une paillasse de laboratoire. Entre eux, une feuille imprimee
   couverte de formules developpees et un ecran affichant une courbe d'analyse.
   Verrerie de laboratoire propre a l'arriere-plan, floue. L'attention est sur le
   geste de lecture, pas sur une manipulation.
 
-02 — DEVELOPPER
+02. DEVELOPPER
   Gros plan sur les mains gantees d'un operateur reglant une vanne en inox sur
   un module de reaction en flux continu. Autour, des tubes fins et transparents
   ou circule un liquide clair, des raccords en inox et un petit manometre. Le
   reste du module est flou. Meme machine que l'image « Produire » de la section
   « Notre solution » : inox brosse, montage sur chassis.
 
-03 — VALIDER
+03. VALIDER
   Un flacon d'echantillon en verre ambre, bouche, pose sur une paillasse claire,
   au premier plan et net. Derriere, flou, un appareil d'analyse de laboratoire
   avec un ecran allume et une main gantee qui s'en approche. Rien d'ecrit ne
   doit etre lisible sur l'ecran ni sur le flacon.
 
-04 — INDUSTRIALISER
+04. INDUSTRIALISER
   Plan large, legerement en contre-plongee, d'une unite de production chimique
   modulaire en flux continu : caissons vitres, instrumentation, pupitre de
   commande, le tout monte sur un chassis a roulettes, au centre d'un hall
   industriel vide et propre au sol lisse. Personne dans le cadre, ou une
   silhouette lointaine et floue pour l'echelle.
 
-05 — PRODUIRE
+05. PRODUIRE
   Une rangee de bidons chimiques industriels en plastique bleu, fermes et sans
   etiquette lisible, sur une palette en sortie de ligne de production. A
   l'arriere-plan flou, l'unite en inox. Memes bidons que les images
@@ -90,7 +90,7 @@ A VERIFIER AVANT MISE EN LIGNE
 Les memes reserves que pour « Notre solution » s'appliquent :
 
   - verifier qu'aucune marque ou filigrane de generation n'est incrustee ;
-  - s'assurer que l'usage commercial d'images generees convient au client, et
+  - s'assurer que l'usage commercial d'images generees convient au client et
     que Marion en est informee ;
   - se rappeler qu'elles montrent des scenes qui n'ont pas eu lieu. Sur un site
     qui vend la tracabilite, c'est un choix a assumer explicitement.

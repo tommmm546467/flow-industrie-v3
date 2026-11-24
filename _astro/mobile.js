@@ -1,4 +1,4 @@
-/* Comportements mobiles partages entre plusieurs pages — 21/09/2026,
+/* Comportements mobiles partages entre plusieurs pages, 21/09/2026,
  * generalise le 22/09
  *
  * Trois choses, independantes, et qui se taisent chacune si son bloc n'est
@@ -14,7 +14,7 @@
 /* ───────────────────────────────────────────────────────────────────────────
  * Fabrique commune aux deux rouleaux
  *
- * Le glissement est natif — c'est `scroll-snap-type` qui l'assure, pas ce
+ * Le glissement est natif : c'est `scroll-snap-type` qui l'assure, pas ce
  * script. Celui-ci n'ajoute que les fleches et le compteur, et ne les montre
  * qu'une fois initialise : sans lui, la bande reste glissable et aucune
  * commande ne promet ce qu'elle ne tient pas.
@@ -142,8 +142,7 @@ function fabriqueRouleau(opts) {
   rafraichir();
 }
 
-/* Les trois etapes de « Notre solution » : une carte a la fois, pas de boucle
-   — c'est une sequence (developper, produire, livrer), revenir au debut apres
+/* Les trois etapes de « Notre solution » : une carte a la fois, pas de boucle : c'est une sequence (developper, produire, livrer), revenir au debut apres
    « Livrer » laisserait croire a un cycle. */
 fabriqueRouleau({
   enveloppe: '[data-trajet]',
@@ -162,7 +161,7 @@ fabriqueRouleau({
 });
 
 /* Les secteurs : quatre tuiles par page (deux colonnes sur deux rangees), et
-   la bande se referme — ce sont huit entrees equivalentes, aucune n'est un
+   la bande se referme : ce sont huit entrees equivalentes, aucune n'est un
    debut ni une fin. */
 fabriqueRouleau({
   enveloppe: '[data-secteurs]',
@@ -176,7 +175,7 @@ fabriqueRouleau({
   boucle: true
 });
 
-/* Les partenaires d'A propos : un par page, et la bande se referme — quatre
+/* Les partenaires d'A propos : un par page, et la bande se referme : quatre
    partenaires equivalents, aucun n'est un debut ni une fin. Le majeur (Eltia
    Groupe / TAES) est le premier <li> de la meme liste, ce qui permet a un
    seul rouleau de les porter tous les quatre ; sur grand ecran il reprend
@@ -207,7 +206,7 @@ fabriqueRouleau({
  */
 (function () {
   /* `.bascule` a l'accueil, `.comparatif` sur la page Technologie : deux
-     composants differents, meme besoin — la ligne sous le regard s'allume. */
+     composants differents, meme besoin : la ligne sous le regard s'allume. */
   var tableau = document.querySelector('.bascule, .comparatif');
   if (!tableau) return;
   var lignes = Array.prototype.slice.call(tableau.querySelectorAll('tbody tr'));
@@ -223,7 +222,7 @@ fabriqueRouleau({
   function placer() {
     if (!etroit.matches) { eteindre(); return; }
     /* La visibilite se lit sur le tableau lui-meme. Un IntersectionObserver
-       ferait la meme chose en differe, par le pipeline de rendu — une piece
+       ferait la meme chose en differe, par le pipeline de rendu : une piece
        mobile de plus pour un rectangle qu'on mesure deja quatre fois juste
        en dessous. */
     var cadre = tableau.getBoundingClientRect();
@@ -257,7 +256,7 @@ fabriqueRouleau({
  * taille.
  *
  * La mesure se prend sur la hauteur du contenu, pas sur `getBoundingClientRect`
- * du bloc colle — une fois `position:sticky` en place, celui-ci renvoie la
+ * du bloc colle : une fois `position:sticky` en place, celui-ci renvoie la
  * hauteur de la boite collee, et l'on tournerait en rond.
  */
 (function () {
@@ -284,7 +283,7 @@ fabriqueRouleau({
     h += parseFloat(st.paddingTop || 0) + parseFloat(st.paddingBottom || 0);
     /* La valeur se pose sur le BLOC, pas sur la section.
        La regle d'origine declare `--h-ecran: calc(510px + 2 * var(--rythme-demi))`
-       sur `.ecran` lui-meme — soit 662 px, la hauteur de bureau. Une valeur
+       sur `.ecran` lui-meme, soit 662 px, la hauteur de bureau. Une valeur
        heritee depuis la section serait ecrasee par cette declaration locale ;
        un style en ligne sur l'element, lui, l'emporte. */
     if (h > 0) ecran.style.setProperty('--h-ecran', Math.round(h) + 'px');
@@ -295,7 +294,7 @@ fabriqueRouleau({
    * Erreur corrigee le 22/09 : la place n'est pas « fenetre moins en-tete ».
    * La barre d'action « Contactez-nous » est fixee en bas et prend 70 px de
    * plus. Sans la retrancher, le bloc tenait sur le papier mais sa moitie
-   * basse — les cartes — passait sous la barre.
+   * basse (les cartes) passait sous la barre.
    *
    * La decision se prend ici et pas dans une requete de media : celle-ci ne
    * peut pas connaitre la hauteur du bloc, qui grandit quand l'ecran retrecit
@@ -304,7 +303,7 @@ fabriqueRouleau({
    * Le seuil de 60 px a une raison precise : sur telephone, les barres du
    * navigateur se replient au defilement et `innerHeight` bouge de quelques
    * dizaines de pixels. Recalculer a chaque fois ferait DERIVER le bloc en
-   * pleine lecture — exactement ce qu'on cherche a supprimer. Seul un vrai
+   * pleine lecture, exactement ce qu'on cherche a supprimer. Seul un vrai
    * changement (rotation, redimensionnement) passe le seuil. */
   var derniereVue = 0;
 
@@ -419,8 +418,7 @@ function fabriquePliage(opts) {
   else window.addEventListener('resize', arbitrer, { passive: true });
 }
 
-/* Les tuiles du fonctionnement. Les deux qui s'etalent sur toute la largeur —
-   le schema et la derniere — gardent leur contenu a l'air libre : elles ont la
+/* Les tuiles du fonctionnement. Les deux qui s'etalent sur toute la largeur (le schema et la derniere) gardent leur contenu a l'air libre : elles ont la
    place, et un repli n'y gagnerait rien. La condition est ecrite comme dans la
    feuille de style, pour que les deux ne puissent pas diverger.
    Le lien de conclusion reste dehors : un appel a l'action cache derriere un
@@ -436,7 +434,7 @@ fabriquePliage({
   }
 });
 
-/* Les cartes de molecules. La ligne d'exemples reste visible — elle tient sur
+/* Les cartes de molecules. La ligne d'exemples reste visible : elle tient sur
    une ligne et c'est elle qui dit de quoi parle la carte ; seul le paragraphe
    d'explication se replie. La derniere carte, seule sur sa rangee et donc
    etalee, garde tout a l'air libre. */
@@ -463,8 +461,8 @@ fabriquePliage({
  *
  * Rien n'est reecrit : les regles de survol d'origine accueillent
  * [data-survol] a cote de :hover, dans leur propre feuille. Les deux etats
- * partagent donc les MEMES declarations — y compris leur neutralisation en
- * mouvement reduit — et ne peuvent pas diverger.
+ * partagent donc les MEMES declarations (y compris leur neutralisation en
+ * mouvement reduit) et ne peuvent pas diverger.
  */
 (function () {
   /* Les cartes du site. `.survol-carte` couvre les molecules, les blocs de
@@ -557,7 +555,7 @@ fabriquePliage({
  * seulement attache depuis un fichier.
  *
  * Ce que fait ce comportement : la classe `avec-photo` ne se pose que si la
- * photo arrive vraiment, et l'image se retire si elle manque — la carte garde
+ * photo arrive vraiment, et l'image se retire si elle manque : la carte garde
  * alors sa mise en page, sans cadre vide ni icone d'image cassee.
  *
  * Le cas de l'image DEJA chargee est traite a part, et ce n'est pas un detail :

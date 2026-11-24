@@ -1,4 +1,4 @@
-Images des trois cases de « Notre solution » — accueil
+Images des trois cases de « Notre solution », accueil
 =======================================================
 
 Les trois fichiers attendus, aux noms exacts :
@@ -53,7 +53,7 @@ Ce sont des images generees par intelligence artificielle. Le dossier
 jeu actuel porte une marque de generation IA. Avant publication :
 
   - verifier qu'aucune marque ou filigrane de generation n'est incrustee ;
-  - s'assurer que l'usage commercial d'images generees convient au client, et
+  - s'assurer que l'usage commercial d'images generees convient au client et
     que Marion en est informee ;
   - se rappeler qu'elles montrent des scenes qui n'ont pas eu lieu : ni ces
     personnes, ni cette machine, ni cette livraison n'existent. Sur un site qui
